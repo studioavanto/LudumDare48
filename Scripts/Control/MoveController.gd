@@ -13,8 +13,8 @@ func handle_inputs():
 		get_parent().change_game_state(1)
 		return
 	
-	velocity.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	velocity.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	velocity.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	velocity.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	
 	velocity = speed*velocity.normalized()
 	
