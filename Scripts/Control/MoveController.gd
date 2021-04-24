@@ -17,6 +17,6 @@ func handle_inputs():
 	velocity.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	
 	velocity = speed*velocity.normalized()
-		
+	
 	$PlayerBody.move_and_slide(velocity)
 	$PlayerBody.look_at(get_viewport().get_mouse_position() - get_viewport().size / 2 +$PlayerBody.position)

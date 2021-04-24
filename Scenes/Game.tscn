@@ -10,7 +10,7 @@
 [ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Ai/MonsterController.gd" type="Script" id=9]
 [ext_resource path="res://Resources/Images/icon.png" type="Texture" id=10]
-[ext_resource path="res://Grafiikka/UI/Lamppu/lamppu6.png" type="Texture" id=11]
+[ext_resource path="res://Grafiikka/Esineet/lamppuöljy.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Pickupable/LampOil.gd" type="Script" id=12]
 
 [sub_resource type="TileSet" id=1]
@@ -474,9 +474,9 @@ points = PoolVector2Array( 0, 16, 16, 16, 16, 0, 64, 0, 64, 48, 0, 48, 0, 16 )
 0/z_index = 0
 
 [sub_resource type="NavigationPolygon" id=57]
-vertices = PoolVector2Array( 127.444, -64.1884, 127.444, -335.717, 1168.31, -723.212, 1216.39, 662.717, -650.373, -717.555, -133.872, -333.966, -661.687, 625.948, -139.529, -65.2653 )
+vertices = PoolVector2Array( 252.46, -65.548, 252.46, -336.741, 1168.31, -723.212, 1216.39, 662.717, -650.373, -717.555, -137.657, -338.626, -661.687, 625.948, -139.529, -65.2653 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 2, 1, 5 ), PoolIntArray( 6, 4, 5, 7 ), PoolIntArray( 3, 6, 7, 0 ) ]
-outlines = [ PoolVector2Array( -650.373, -717.555, -661.687, 625.948, 1216.39, 662.717, 1168.31, -723.212 ), PoolVector2Array( -133.872, -333.966, -139.529, -65.2653, 127.444, -64.1884, 127.444, -335.717 ) ]
+outlines = [ PoolVector2Array( -650.373, -717.555, -661.687, 625.948, 1216.39, 662.717, 1168.31, -723.212 ), PoolVector2Array( -137.657, -338.626, -139.529, -65.2653, 252.46, -65.548, 252.46, -336.741 ) ]
 
 [sub_resource type="CircleShape2D" id=58]
 
@@ -553,8 +553,19 @@ script = ExtResource( 12 )
 shape = SubResource( 58 )
 
 [node name="Sprite" type="Sprite" parent="Collectable/Lamp-oil"]
-scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Lamp-oil2" type="Area2D" parent="Collectable"]
+position = Vector2( 500, 200 )
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable/Lamp-oil2"]
+shape = SubResource( 58 )
+
+[node name="Sprite" type="Sprite" parent="Collectable/Lamp-oil2"]
 texture = ExtResource( 11 )
 
 [connection signal="body_entered" from="Collectable/Lamp-oil" to="PlayerController" method="_on_Lampoil_body_entered"]
 [connection signal="body_entered" from="Collectable/Lamp-oil" to="Collectable/Lamp-oil" method="_on_Lampoil_body_entered"]
+[connection signal="body_entered" from="Collectable/Lamp-oil2" to="PlayerController" method="_on_Lampoil_body_entered"]
+[connection signal="body_entered" from="Collectable/Lamp-oil2" to="Collectable/Lamp-oil2" method="_on_Lampoil_body_entered"]
