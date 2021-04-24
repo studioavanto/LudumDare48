@@ -15,7 +15,7 @@ func change_game_state(new_state : int):
 
 func get_gamestate():
 	return current_gamestate
-	
+
 func _process(_delta):
 	if next_gamestate != GameState.CONTROL_NULL:
 		current_gamestate = next_gamestate
