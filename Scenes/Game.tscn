@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scenes/Nodes/MusicManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Resources/Images/floor_green.png" type="Texture" id=6]
 [ext_resource path="res://Resources/Images/autotile_template_3x3_minimal.png" type="Texture" id=7]
 [ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Ai/MonsterController.gd" type="Script" id=9]
+[ext_resource path="res://Resources/Images/icon.png" type="Texture" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "floor_brown.png 0"
@@ -475,7 +477,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
-position = Vector2( 7.94597, 76.2813 )
+position = Vector2( -1.5677, 91.741 )
 script = ExtResource( 2 )
 
 [node name="MusicManager" parent="." instance=ExtResource( 1 )]
@@ -518,6 +520,18 @@ texture = ExtResource( 8 )
 shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( -59.4604, 26.1625 )
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 57 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -92.7581, 141.516 )
+
+[node name="MonsterBody" type="KinematicBody2D" parent="."]
+position = Vector2( 176.003, 323.464 )
+script = ExtResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="MonsterBody"]
+position = Vector2( -8.32446, 9.51367 )
+texture = ExtResource( 10 )
