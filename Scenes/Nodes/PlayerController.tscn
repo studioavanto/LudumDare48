@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Control/MoveController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Control/PlayerController.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Control/PauseController.gd" type="Script" id=3]
-[ext_resource path="res://Resources/Images/icon.png" type="Texture" id=4]
+[ext_resource path="res://Grafiikka/Hahmo/päähahmo.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Control/Inventory.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 25.0
@@ -21,6 +22,7 @@ speed = 400
 [node name="PlayerBody" type="KinematicBody2D" parent="MoveController"]
 
 [node name="Sprite" type="Sprite" parent="MoveController/PlayerBody"]
+rotation = 0.888373
 z_index = 4
 texture = ExtResource( 4 )
 
@@ -31,6 +33,9 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="MoveController/PlayerBody"]
 current = true
+
+[node name="Inventory_node" type="Node" parent="MoveController/PlayerBody"]
+script = ExtResource( 5 )
 
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource( 3 )
