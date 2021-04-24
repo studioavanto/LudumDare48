@@ -13,13 +13,13 @@ func handle_inputs():
 		get_parent().change_game_state(1)
 		return
 	
-	velocity.x = speed * (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
-	velocity.y = speed * (Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
+	velocity.x = speed * (Input.get_action_strength("move_right") - Input.get_action_strength("move_left"))
+	velocity.y = speed * (Input.get_action_strength("move_down") - Input.get_action_strength("move_up"))
 	
 	if Input.is_action_pressed("aim"):
 		$PointDirection.position = $PlayerBody.position + aim_distance * (get_viewport().get_mouse_position() - get_viewport().size / 2).normalized()
 	else:
-		$PointDirection.position = $PlayerBody.position
+		$PointDirection.position = $PlayerBody.position + velocity / 10.0
 		
 	$PlayerBody.move_and_slide(velocity)
 	$PlayerBody.look_at($PointDirection.position)
