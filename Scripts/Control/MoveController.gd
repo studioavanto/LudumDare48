@@ -3,6 +3,8 @@ extends "res://Scripts/Control/Controllable.gd"
 export var speed = 1000
 var velocity = Vector2(0.0, 0.0)
 var look_dir = Vector2(1.0, 0.0)
+var previous_look_dir = Vector2(1.0, 0.0)
+var angle = 0.0
 export var aim_distance  = 100.0
 
 func _ready():
@@ -18,5 +20,7 @@ func handle_inputs():
 	
 	velocity = speed*velocity.normalized()
 	
+	if(velocity.length() > 0.01):
+		$PlayerBody/Sprite.rotation = lerp_angle($PlayerBody/Sprite.rotation, 3.14159/2 + velocity.angle(), 0.1)
 	$PlayerBody.move_and_slide(velocity)
-	$PlayerBody.look_at(get_viewport().get_mouse_position() - get_viewport().size / 2 +$PlayerBody.position)
+	#$PlayerBody.look_at(look_dir)

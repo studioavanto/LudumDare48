@@ -24,7 +24,6 @@ speed = 400
 script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="MoveController/PlayerBody"]
-rotation = 1.57254
 z_index = 4
 texture = ExtResource( 4 )
 

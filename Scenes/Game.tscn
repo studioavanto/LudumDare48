@@ -565,7 +565,7 @@ shape = SubResource( 58 )
 [node name="Sprite" type="Sprite" parent="Collectable/Lamp-oil2"]
 texture = ExtResource( 11 )
 
-[connection signal="body_entered" from="Collectable/Lamp-oil" to="PlayerController" method="_on_Lampoil_body_entered"]
 [connection signal="body_entered" from="Collectable/Lamp-oil" to="Collectable/Lamp-oil" method="_on_Lampoil_body_entered"]
-[connection signal="body_entered" from="Collectable/Lamp-oil2" to="PlayerController" method="_on_Lampoil_body_entered"]
+[connection signal="body_entered" from="Collectable/Lamp-oil" to="PlayerController" method="_on_Lampoil_body_entered"]
 [connection signal="body_entered" from="Collectable/Lamp-oil2" to="Collectable/Lamp-oil2" method="_on_Lampoil_body_entered"]
+[connection signal="body_entered" from="Collectable/Lamp-oil2" to="PlayerController" method="_on_Lampoil_body_entered"]
