@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scenes/Nodes/MusicManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
@@ -469,6 +469,11 @@ points = PoolVector2Array( 0, 16, 16, 16, 16, 0, 64, 0, 64, 48, 0, 48, 0, 16 )
 } ]
 0/z_index = 0
 
+[sub_resource type="Curve2D" id=57]
+_data = {
+"points": PoolVector2Array(  )
+}
+
 [node name="Game" type="Node2D"]
 position = Vector2( 7.94597, 76.2813 )
 script = ExtResource( 2 )
@@ -513,3 +518,6 @@ texture = ExtResource( 8 )
 shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 57 )

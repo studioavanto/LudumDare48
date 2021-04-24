@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Control/MoveController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Control/PlayerController.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Control/PauseController.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Images/icon.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Control/PointDirection.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 25.0
@@ -30,17 +29,8 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MoveController/PlayerBody"]
 shape = SubResource( 1 )
 
-[node name="PointDirection" type="Node2D" parent="MoveController"]
-script = ExtResource( 5 )
-
-[node name="Camera2D" type="Camera2D" parent="MoveController/PointDirection"]
+[node name="Camera2D" type="Camera2D" parent="MoveController/PlayerBody"]
 current = true
-
-[node name="Sprite" type="Sprite" parent="MoveController/PointDirection"]
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 4 )
-
-[node name="Tween" type="Tween" parent="MoveController/PointDirection"]
 
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource( 3 )
