@@ -22,7 +22,7 @@ speed = 400
 [node name="PlayerBody" type="KinematicBody2D" parent="MoveController"]
 
 [node name="Sprite" type="Sprite" parent="MoveController/PlayerBody"]
-rotation = 0.888373
+rotation = 1.57254
 z_index = 4
 texture = ExtResource( 4 )
 
