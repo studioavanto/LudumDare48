@@ -474,9 +474,9 @@ points = PoolVector2Array( 0, 16, 16, 16, 16, 0, 64, 0, 64, 48, 0, 48, 0, 16 )
 0/z_index = 0
 
 [sub_resource type="NavigationPolygon" id=57]
-vertices = PoolVector2Array( 252.46, -65.548, 252.46, -336.741, 1168.31, -723.212, 1216.39, 662.717, -650.373, -717.555, -137.657, -338.626, -661.687, 625.948, -139.529, -65.2653 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 2, 1, 5 ), PoolIntArray( 6, 4, 5, 7 ), PoolIntArray( 3, 6, 7, 0 ) ]
-outlines = [ PoolVector2Array( -650.373, -717.555, -661.687, 625.948, 1216.39, 662.717, 1168.31, -723.212 ), PoolVector2Array( -137.657, -338.626, -139.529, -65.2653, 252.46, -65.548, 252.46, -336.741 ) ]
+vertices = PoolVector2Array( 1446, -703.492, 1469.79, 645.068, -661.687, 625.948, -650.373, -717.555 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -650.373, -717.555, -661.687, 625.948, 1469.79, 645.068, 1446, -703.492 ) ]
 
 [sub_resource type="CircleShape2D" id=58]
 
@@ -540,7 +540,7 @@ texture = ExtResource( 10 )
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-position = Vector2( 124.726, 383.186 )
+position = Vector2( 131.956, 369.963 )
 navpoly = SubResource( 57 )
 
 [node name="Collectable" type="Node" parent="."]

@@ -5,7 +5,7 @@ extends KinematicBody2D
 var state = "Waiting"
 # var b = "text"
 export var speed = 300
-export var attack_dist = 100
+export var attack_dist = 1
 var look_dir = Vector2(1.0, 0.0)
 export var see_dist = 500
 onready var target = get_parent().get_node("PlayerController/MoveController/PlayerBody")
