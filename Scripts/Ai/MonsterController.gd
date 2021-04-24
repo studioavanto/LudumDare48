@@ -6,10 +6,10 @@ var state = "Waiting"
 # var b = "text"
 export var speed = 300
 export var attack_dist = 100
-var velocity = Vector2(0.0, 0.0)
 var look_dir = Vector2(1.0, 0.0)
 export var see_dist = 500
 onready var target = get_parent().get_node("PlayerController/MoveController/PlayerBody")
+onready var navi2d = get_parent().get_node("Navigation2D")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +28,8 @@ func in_attack_distance():
 	if(position.distance_to(target.position) < attack_dist):
 		in_range = 1
 	return(in_range)
-func _physics_process(_delta):
+
+func _physics_process(delta):
 
 	if(in_attack_distance()==1):
 		state = "Attacking"
@@ -40,11 +41,20 @@ func _physics_process(_delta):
 			pass
 		"Hunting":
 			#look_dir = target.position - position
-			velocity = target.position - position
-			velocity = velocity.normalized()*speed
-		"Attacking":
-			velocity = Vector2(0.0, 0.0)
+			var path = navi2d.get_simple_path(position, target.position, true)
+			var move_distance = speed * delta
+			var start_point = position
 
-	move_and_slide(velocity)
+			while(move_distance> 0 and path.size() > 0):
+				var distance_to_next_point = position.distance_to(path[0])
+				if(move_distance <= distance_to_next_point):
+					position += position.direction_to(path[0])*move_distance
+				else:
+					position = path[0]
+					path.remove(0)
+				move_distance -= distance_to_next_point
+		"Attacking":
+			pass
+
 	look_at(look_dir)
 #	pass

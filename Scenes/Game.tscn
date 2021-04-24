@@ -471,10 +471,10 @@ points = PoolVector2Array( 0, 16, 16, 16, 16, 0, 64, 0, 64, 48, 0, 48, 0, 16 )
 } ]
 0/z_index = 0
 
-[sub_resource type="Curve2D" id=57]
-_data = {
-"points": PoolVector2Array(  )
-}
+[sub_resource type="NavigationPolygon" id=57]
+vertices = PoolVector2Array( 127.444, -64.1884, 127.444, -335.717, 1168.31, -723.212, 1216.39, 662.717, -650.373, -717.555, -133.872, -333.966, -661.687, 625.948, -139.529, -65.2653 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 2, 1, 5 ), PoolIntArray( 6, 4, 5, 7 ), PoolIntArray( 3, 6, 7, 0 ) ]
+outlines = [ PoolVector2Array( -650.373, -717.555, -661.687, 625.948, 1216.39, 662.717, 1168.31, -723.212 ), PoolVector2Array( -133.872, -333.966, -139.529, -65.2653, 127.444, -64.1884, 127.444, -335.717 ) ]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
@@ -508,7 +508,7 @@ z_index = 2
 format = 1
 
 [node name="LightSource" type="Node2D" parent="."]
-position = Vector2( 532.671, -68.5582 )
+position = Vector2( 527.914, -53.0985 )
 z_index = 5
 __meta__ = {
 "_edit_group_": true
@@ -521,16 +521,20 @@ shadow_enabled = true
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( -59.4604, 26.1625 )
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 57 )
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( -92.7581, 141.516 )
 
 [node name="MonsterBody" type="KinematicBody2D" parent="."]
-position = Vector2( 176.003, 323.464 )
+position = Vector2( 132.002, 384.114 )
 script = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="MonsterBody"]
-position = Vector2( -8.32446, 9.51367 )
+position = Vector2( 5.94604, -5.94604 )
+z_index = 4
 texture = ExtResource( 10 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( 124.726, 384.868 )
+navpoly = SubResource( 57 )
