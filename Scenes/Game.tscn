@@ -477,7 +477,6 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
-position = Vector2( -1.5677, 91.741 )
 script = ExtResource( 2 )
 
 [node name="MusicManager" parent="." instance=ExtResource( 1 )]
@@ -509,7 +508,7 @@ z_index = 2
 format = 1
 
 [node name="LightSource" type="Node2D" parent="."]
-position = Vector2( 531.482, -67.369 )
+position = Vector2( 532.671, -68.5582 )
 z_index = 5
 __meta__ = {
 "_edit_group_": true
