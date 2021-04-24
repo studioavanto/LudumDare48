@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Scenes/Nodes/MusicManager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Ai/MonsterController.gd" type="Script" id=9]
 [ext_resource path="res://Resources/Images/icon.png" type="Texture" id=10]
+[ext_resource path="res://Grafiikka/UI/Lamppu/lamppu6.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/Pickupable/LampOil.gd" type="Script" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "floor_brown.png 0"
@@ -476,6 +478,8 @@ vertices = PoolVector2Array( 127.444, -64.1884, 127.444, -335.717, 1168.31, -723
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 2, 1, 5 ), PoolIntArray( 6, 4, 5, 7 ), PoolIntArray( 3, 6, 7, 0 ) ]
 outlines = [ PoolVector2Array( -650.373, -717.555, -661.687, 625.948, 1216.39, 662.717, 1168.31, -723.212 ), PoolVector2Array( -133.872, -333.966, -139.529, -65.2653, 127.444, -64.1884, 127.444, -335.717 ) ]
 
+[sub_resource type="CircleShape2D" id=58]
+
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -536,5 +540,21 @@ texture = ExtResource( 10 )
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-position = Vector2( 124.726, 384.868 )
+position = Vector2( 124.726, 383.186 )
 navpoly = SubResource( 57 )
+
+[node name="Collectable" type="Node" parent="."]
+
+[node name="Lamp-oil" type="Area2D" parent="Collectable"]
+position = Vector2( 300, 200 )
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable/Lamp-oil"]
+shape = SubResource( 58 )
+
+[node name="Sprite" type="Sprite" parent="Collectable/Lamp-oil"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[connection signal="body_entered" from="Collectable/Lamp-oil" to="PlayerController" method="_on_Lampoil_body_entered"]
+[connection signal="body_entered" from="Collectable/Lamp-oil" to="Collectable/Lamp-oil" method="_on_Lampoil_body_entered"]
