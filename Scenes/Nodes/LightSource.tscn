@@ -25,3 +25,5 @@ shadow_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightHitBox"]
 shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
