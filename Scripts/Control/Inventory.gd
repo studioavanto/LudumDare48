@@ -34,6 +34,7 @@ func turn_lamp_off():
 
 func reset_inventory():
 	lamp_oil = 1.0
+	lamp_is_on = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

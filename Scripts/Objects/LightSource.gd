@@ -4,6 +4,10 @@ var light_on = true
 var intense_light = false
 var end_tween_cycle = false
 
+func turn_on_light():
+	if(!light_on):
+		toggle_light()
+
 func toggle_light():
 	light_on = !light_on
 	$Light2D.enabled = light_on
@@ -17,6 +21,7 @@ func toggle_intense_light():
 		$LightHitBox.collision_mask = 32
 		intense_light = true
 		end_tween_cycle = false
+		$Tween.interpolate_property($Light2D,"texture_scale",4.0, 6.0, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.interpolate_property($Light2D,"energy",1.0, 2.0, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 	else:
@@ -28,6 +33,7 @@ func toggle_intense_light():
 
 func intense_burn_animation():
 	if(!end_tween_cycle):
+		$Tween.interpolate_property($Light2D,"texture_scale",6.0, 4.0, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.interpolate_property($Light2D,"energy",2.0, 1.0, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 		end_tween_cycle = true
