@@ -12,7 +12,7 @@ func die():
 		get_parent().death_is_now()
 
 func set_fuel_ui():
-	get_parent().get_node("CanvasLayer/Fuel").set_texture($MoveController/PlayerBody/Inventory_node.lamp_oil+0.1)
+	get_parent().get_node("CanvasLayer/Fuel").set_texture($MoveController/PlayerBody/Inventory_node.lamp_oil+0.17)
 
 func change_game_state(new_state : int):
 	print("New state %s" % new_state)

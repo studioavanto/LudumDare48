@@ -136,7 +136,5 @@ shape = SubResource( 6 )
 [node name="Lamp" parent="Lamps" instance=ExtResource( 4 )]
 position = Vector2( 1577.07, 1350.87 )
 
-[node name="Message" parent="Lamps/Lamp" instance=ExtResource( 13 )]
-
 [node name="Lamp2" parent="Lamps" instance=ExtResource( 4 )]
 position = Vector2( 2261.75, 1056.87 )
