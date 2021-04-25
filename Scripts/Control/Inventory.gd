@@ -28,6 +28,5 @@ func turn_lamp_off():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(lamp_oil)
 	if(lamp_is_on):
 		lamp_oil -= lamp_oil_consume_rate*delta
