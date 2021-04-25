@@ -84,7 +84,7 @@ texture = ExtResource( 3 )
 position = Vector2( -501.174, -561.719 )
 
 [node name="Lamp2" parent="kartta1" instance=ExtResource( 4 )]
-position = Vector2( 803.897, 521.356 )
+position = Vector2( 794.917, 521.356 )
 
 [node name="DoorObject" parent="kartta1" instance=ExtResource( 5 )]
 position = Vector2( -566.922, 259.651 )
@@ -97,6 +97,8 @@ position = Vector2( 971.377, 452.097 )
 
 [node name="Monster" parent="." instance=ExtResource( 8 )]
 position = Vector2( 800, 700 )
+speed = 300
+light_slowdown = 0.1
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 scale = Vector2( 1, 1.00295 )
