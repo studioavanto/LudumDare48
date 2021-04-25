@@ -23,6 +23,10 @@ func handle_inputs():
 	if Input.is_action_just_pressed("interact"):
 		interact_with_interactable()
 	
+	if Input.is_action_just_pressed("togglelight"):
+		$PlayerBody/Inventory_node.toggle_lamp()
+		$PlayerBody/Sprite/LightSource.toggle_light()
+	
 	velocity.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	velocity.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	

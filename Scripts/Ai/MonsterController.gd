@@ -9,7 +9,7 @@ export var attack_dist = 20
 var look_dir = Vector2(1.0, 0.0)
 var dist_to_light = 1.0
 export var see_dist = 500
-export var light_slowdown = 0.8
+export var light_slowdown = 0.7
 onready var target = get_parent().get_parent().get_node("PlayerController/MoveController/PlayerBody")
 onready var navi2d = get_parent().get_node("Navigation2D")
 var in_light = false
@@ -18,8 +18,6 @@ var in_intense_light = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func in_line_of_sight():

@@ -15,6 +15,12 @@ func fill_lamp():
 func _ready():
 	pass # Replace with function body.
 
+func toggle_lamp():
+	if(lamp_is_on):
+		turn_lamp_off()
+	else:
+		turn_lamp_on()
+
 func turn_lamp_on():
 	lamp_is_on = true
 func turn_lamp_off():
@@ -22,5 +28,6 @@ func turn_lamp_off():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(lamp_oil)
 	if(lamp_is_on):
 		lamp_oil -= lamp_oil_consume_rate*delta
