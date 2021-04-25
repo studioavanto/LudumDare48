@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 200.0
+
+[node name="LightSource" type="Node2D"]
+z_index = 5
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 5.04538, 0 )
+scale = Vector2( 0.990146, 1 )
+z_index = 5
+texture = ExtResource( 1 )
+mode = 3
+shadow_enabled = true
+
+[node name="LightHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightHitBox"]
+shape = SubResource( 1 )

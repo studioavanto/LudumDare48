@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Control/MoveController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Control/PlayerController.gd" type="Script" id=2]
@@ -9,6 +9,9 @@
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 25.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 128.2
 
 [node name="PlayerController" type="Node"]
 script = ExtResource( 2 )
@@ -38,6 +41,12 @@ current = true
 
 [node name="Inventory_node" type="Node" parent="MoveController/PlayerBody"]
 script = ExtResource( 5 )
+
+[node name="InteractArea" type="Area2D" parent="MoveController/PlayerBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoveController/PlayerBody/InteractArea"]
+position = Vector2( 60, 0 )
+shape = SubResource( 2 )
 
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource( 3 )

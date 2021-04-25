@@ -9,7 +9,7 @@ export var attack_dist = 100
 var look_dir = Vector2(1.0, 0.0)
 export var see_dist = 500
 onready var target = get_parent().get_node("PlayerController/MoveController/PlayerBody")
-onready var navi2d = get_parent().get_node("Navigation2D")
+onready var navi2d = get_parent().get_node("Terrain/Navigation2D")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,15 +40,14 @@ func _physics_process(delta):
 		"Waiting":
 			pass
 		"Hunting":
-			#look_dir = target.position - position
 			var path = navi2d.get_simple_path(position, target.position, true)
 			var move_distance = speed * delta
 			var start_point = position
 
-			while(move_distance> 0 and path.size() > 0):
+			while(move_distance > 0 and path.size() > 0):
 				var distance_to_next_point = position.distance_to(path[0])
 				if(move_distance <= distance_to_next_point):
-					position += position.direction_to(path[0])*move_distance
+					position += position.direction_to(path[0]) * move_distance
 				else:
 					position = path[0]
 					path.remove(0)
