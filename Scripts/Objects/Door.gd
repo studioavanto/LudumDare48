@@ -14,10 +14,12 @@ func interact_object():
 		open_door()
 
 func open_door():
-	$Door.rotate(Vector3(0, 0, 0), -5 * PI / 4)
+	$Door.rotate(-5 * PI / 4)
+	door_open = true
 
 func close_door():
-	$Door.rotate(Vector3(0, 0, 0), 5 * PI / 4)
+	$Door.rotate(5 * PI / 4)
+	door_open = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
