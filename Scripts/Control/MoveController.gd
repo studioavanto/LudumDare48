@@ -6,6 +6,7 @@ var look_dir = Vector2(1.0, 0.0)
 var previous_look_dir = Vector2(1.0, 0.0)
 var angle = 0.0
 export var aim_distance  = 100.0
+var intense_burn_last_step = false
 
 func _ready():
 	control_id = 0
@@ -22,6 +23,21 @@ func handle_inputs():
 	
 	if Input.is_action_just_pressed("interact"):
 		interact_with_interactable()
+	
+	if Input.is_action_just_pressed("togglelight"):
+		$PlayerBody/Inventory_node.toggle_lamp()
+		$PlayerBody/Sprite/LightSource.toggle_light()
+	
+	if(intense_burn_last_step):
+		intense_burn_last_step = false
+		$PlayerBody/Sprite/LightSource.toggle_intense_light()
+	
+	if(Input.is_action_just_pressed("intenseburn")):
+		if($PlayerBody/Sprite/LightSource.intense_light == false):
+			intense_burn_last_step = true
+			$PlayerBody/Inventory_node.intense_burn()
+			$PlayerBody/Sprite/LightSource.toggle_intense_light()
+	
 	
 	velocity.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	velocity.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
