@@ -32,6 +32,9 @@ func turn_lamp_on():
 func turn_lamp_off():
 	lamp_is_on = false
 
+func reset_inventory():
+	lamp_oil = 1.0
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(lamp_is_on and lamp_oil > 0.0):
@@ -40,3 +43,5 @@ func _process(delta):
 		lamp_oil = 0.0
 		turn_lamp_off()
 		get_parent().get_node("Sprite/LightSource").toggle_light()
+	if(lamp_oil<=0.0):
+		get_parent().get_parent().get_parent().die()
