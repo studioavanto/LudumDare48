@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Objects/Door.gd" type="Script" id=1]
+[ext_resource path="res://Grafiikka/Kartta/ovi kiinni.png" type="Texture" id=2]
+[ext_resource path="res://Grafiikka/Kartta/Ovet/tuplaovipalikka2.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 114.81
+height = 84.085
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 221.801, 4.59078 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 131.891, -3.70547, 196.481, -3.74105, 196.613, 40.3591, 132.515, 40.4915 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 147.8, 39.4281, 189.656, 39.4747, 190.241, -3.30109, 147.598, -3.30109 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 14.9139, -1.58821, 131.852, -2.64768, 131.19, 41.32, 14.1574, 41.5494 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 132.529, 3.96117 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 143.21, 4.52626 )
+
+[node name="DoorObjectHorizontal2" type="Sprite"]
+z_index = 6
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Door" type="Sprite" parent="."]
+position = Vector2( -131.435, 23.1491 )
+z_index = 4
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 0, -30 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.58347, -6.90451 )
+shape = SubResource( 1 )
+
+[node name="OviSB" type="StaticBody2D" parent="."]
+position = Vector2( -85.167, 27.8498 )
+scale = Vector2( 0.502947, 5.33333 )
+
+[node name="ovi" type="CollisionShape2D" parent="OviSB"]
+position = Vector2( 169.05, 2.80394 )
+shape = SubResource( 2 )
+
+[node name="oikea_reauna_varjo" type="LightOccluder2D" parent="."]
+position = Vector2( -86.267, -56.5684 )
+occluder = SubResource( 3 )
+
+[node name="vasen_reuna_varjo" type="LightOccluder2D" parent="."]
+position = Vector2( -260.215, -55.1543 )
+occluder = SubResource( 4 )
+
+[node name="ovi_varjo" type="LightOccluder2D" parent="."]
+position = Vector2( -85.0739, -57.2645 )
+occluder = SubResource( 5 )
+
+[node name="ReunatSB" type="StaticBody2D" parent="."]
+position = Vector2( -84.8527, 26.5165 )
+
+[node name="oikea_reuna" type="CollisionShape2D" parent="ReunatSB"]
+position = Vector2( -101.487, 14.9365 )
+scale = Vector2( 0.502947, 5.33333 )
+shape = SubResource( 6 )
+
+[node name="vasen_reuna" type="CollisionShape2D" parent="ReunatSB"]
+position = Vector2( 268.605, 13.4604 )
+scale = Vector2( 0.502947, 5.33333 )
+shape = SubResource( 7 )
