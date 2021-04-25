@@ -38,30 +38,32 @@ func _physics_process(delta):
 	elif(in_line_of_sight()==1):
 		state = "Hunting"
 
-	in_intense_light = false
 	in_light = false
 	for area in $Area2D.get_overlapping_areas():
 		if(area.collision_mask == 1):
+			print(area.collision_mask)
 			dist_to_light = position.distance_to(target.position)/400
-			print(dist_to_light)
 			in_light = true
 		if(area.collision_mask == 32):
 			in_intense_light = true
-
+			in_light = true
+	if(!in_light):
+		in_intense_light = false
 	match state:
 		"Waiting":
 			pass
 		"Hunting":
 			var path = navi2d.get_simple_path(position, target.position, true)
-	
+			
 			if(in_intense_light):
-				move_and_slide(position.direction_to(-target*speed))
+				move_and_slide(target.position.direction_to(position)*speed)
 			elif(in_light):
-				move_and_slide(position.direction_to(path[1])*speed*dist_to_light)
+				if(path.size()>1):
+					move_and_slide(position.direction_to(path[1])*speed*dist_to_light)
 			else:
-				move_and_slide(position.direction_to(path[1])*speed)
+				if(path.size()>1):
+					move_and_slide(position.direction_to(path[1])*speed)
 		"Attacking":
 			pass
-
 	look_at(look_dir)
 #	pass
