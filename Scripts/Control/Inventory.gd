@@ -13,9 +13,9 @@ func fill_lamp():
 		lamp_oil = 1.0
 
 func intense_burn():
-	if(lamp_oil > intense_burn_cost):
+	if(lamp_oil > intense_burn_cost and lamp_is_on):
 		lamp_oil -= intense_burn_cost
-	else:
+	elif(lamp_is_on):
 		lamp_oil = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
