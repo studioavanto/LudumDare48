@@ -6,7 +6,6 @@ export var lamp_oil_consume_rate = 0.02 #100 seconds
 var lamp_is_on = true
 export var intense_burn_cost = 0.50
 export var fill_amount = 0.25
-var alive = true
 
 func fill_lamp():
 	lamp_oil += fill_amount
@@ -34,7 +33,6 @@ func turn_lamp_off():
 	lamp_is_on = false
 
 func reset_inventory():
-	alive = true
 	lamp_oil = 1.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,6 +43,5 @@ func _process(delta):
 		lamp_oil = 0.0
 		turn_lamp_off()
 		get_parent().get_node("Sprite/LightSource").toggle_light()
-	if(lamp_oil<=0.0 and alive):
-		alive = false
-		get_parent().get_parent().get_parent().get_parent().death_is_now()
+	if(lamp_oil<=0.0):
+		get_parent().get_parent().get_parent().die()

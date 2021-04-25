@@ -4,6 +4,12 @@ enum GameState { CONTROL_PLAYER, CONTROL_PAUSE, CONTROL_NULL }
 
 var current_gamestate = GameState.CONTROL_PLAYER
 var next_gamestate = GameState.CONTROL_NULL
+var alive = true
+
+func die():
+	if(alive):
+		alive = false
+		get_parent().death_is_now()
 
 func change_game_state(new_state : int):
 	print("New state %s" % new_state)

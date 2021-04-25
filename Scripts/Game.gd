@@ -12,6 +12,7 @@ func _ready():
 func set_player_to_start_location():
 	$PlayerController/MoveController/PlayerBody.position = $Terrain/StartLocation.position
 	$PlayerController/MoveController/PlayerBody/Inventory_node.reset_inventory()
+	$PlayerController.alive = true
 
 func end_scene_if_possible():
 	if $Terrain.are_all_light_on():
