@@ -15,3 +15,5 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func ask_fill_lamp():
+	$Inventory_node.fill_lamp()

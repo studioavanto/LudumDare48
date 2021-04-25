@@ -20,6 +20,3 @@ func _process(_delta):
 	if next_gamestate != GameState.CONTROL_NULL:
 		current_gamestate = next_gamestate
 		next_gamestate = GameState.CONTROL_NULL
-
-func _on_Lampoil_body_entered(body):
-	$MoveController/PlayerBody/Inventory_node.fill_lamp()

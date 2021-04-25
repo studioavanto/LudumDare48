@@ -15,7 +15,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_Lampoil_body_entered(body):
+func _on_Lampoilbody_body_entered(body):
 	if(body.name == "PlayerBody"):
 		queue_free()
-	pass # Replace with function body.
+		body.ask_fill_lamp()
