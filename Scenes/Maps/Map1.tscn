@@ -1,14 +1,16 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Nodes/Walls.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Images/floor_gray.png" type="Texture" id=2]
 [ext_resource path="res://Grafiikka/Kartta/karttapohja.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Nodes/Objects/Lamp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Nodes/Lamp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Nodes/Doors/DoorHorizontal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Nodes/Doors/DoorVertical.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Images/floor_brown.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Nodes/Pickuppable-object.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Nodes/Objects/ObjectWithCollision.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Nodes/Objects/ObjectWithoutCollision.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -115,3 +117,7 @@ z_index = 4
 [node name="Pickuppable-object" parent="Pickuppable-object" instance=ExtResource( 9 )]
 position = Vector2( -749.805, -44.8987 )
 z_index = 4
+
+[node name="ObjectWithCollision" parent="." instance=ExtResource( 10 )]
+
+[node name="ObjectWithoutCollision" parent="." instance=ExtResource( 11 )]
