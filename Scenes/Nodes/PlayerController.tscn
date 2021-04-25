@@ -44,6 +44,7 @@ current = true
 script = ExtResource( 5 )
 
 [node name="InteractArea" type="Area2D" parent="MoveController/PlayerBody"]
+collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MoveController/PlayerBody/InteractArea"]
 position = Vector2( 0, -60 )
