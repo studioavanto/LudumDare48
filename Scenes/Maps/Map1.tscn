@@ -97,7 +97,7 @@ position = Vector2( 971.377, 452.097 )
 
 [node name="Monster" parent="." instance=ExtResource( 8 )]
 position = Vector2( 800, 700 )
-speed = 300
+speed = 400
 light_slowdown = 0.1
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -110,6 +110,8 @@ navpoly = SubResource( 5 )
 
 [node name="Pickuppable-object" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1401.24, 1369.85 )
+z_index = 4
 
 [node name="Pickuppable-object" parent="Pickuppable-object" instance=ExtResource( 9 )]
 position = Vector2( -749.805, -44.8987 )
+z_index = 4
