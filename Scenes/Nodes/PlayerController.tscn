@@ -51,6 +51,7 @@ current = true
 
 [node name="Inventory_node" type="Node" parent="MoveController/PlayerBody"]
 script = ExtResource( 5 )
+lamp_oil_consume_rate = 0.1
 
 [node name="InteractArea" type="Area2D" parent="MoveController/PlayerBody"]
 collision_mask = 17
