@@ -12,7 +12,6 @@ func _ready():
 
 func interact_with_interactable():
 	for area in $PlayerBody/InteractArea.get_overlapping_areas():
-		print(area)
 		if (area.collision_mask == 2):
 			area.get_parent().interact_object()
 
