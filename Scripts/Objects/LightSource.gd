@@ -3,6 +3,10 @@ extends Node2D
 var light_on = true
 var intense_light = false
 var end_tween_cycle = false
+onready var noise = OpenSimplexNoise.new()
+var value = 0.0
+const MAX_VALUE = 100000000
+onready var default_position = position
 
 func turn_on_light():
 	if(!light_on):
@@ -40,8 +44,16 @@ func intense_burn_animation():
 
 func _ready():
 	$Tween.connect("tween_all_completed", self, "intense_burn_animation")
-	print($Light2D.energy)
+	randomize()
+	value = randi()%MAX_VALUE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	value += 0.5
+	if(value > MAX_VALUE):
+		value = 0.0
+	var alpha = ((noise.get_noise_1d(value) +1) /4.0) + 0.5
+	$Light2D.color = Color($Light2D.color.r, $Light2D.color.g, $Light2D.color.b, alpha)
+	position = default_position + Vector2(cos(OS.get_ticks_msec()/1000.0),alpha)*sin(OS.get_ticks_msec()/200.0)
+
+pass
