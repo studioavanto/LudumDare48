@@ -17,8 +17,8 @@ func end_scene_if_possible():
 		$CanvasLayer/ChangeSceneRect.fade_to_scene(current_stage + 1)
 
 func death_is_now():
-	$CanvasLayer/ChangeSceneRect.fade_to_scene(69)
 	current_stage -= 1
+	$CanvasLayer/ChangeSceneRect.fade_to_scene(69)
 
 func destroy_current_map():
 	get_node("Terrain").connect("tree_exited", self, "load_next_map")
