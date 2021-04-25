@@ -41,8 +41,7 @@ func _physics_process(delta):
 	in_light = false
 	for area in $Area2D.get_overlapping_areas():
 		if(area.collision_mask == 1):
-			print(area.collision_mask)
-			dist_to_light = position.distance_to(target.position)/400
+			dist_to_light = position.distance_to(target.global_position)/400
 			in_light = true
 		if(area.collision_mask == 32):
 			in_intense_light = true
