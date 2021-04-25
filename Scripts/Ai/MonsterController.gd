@@ -5,7 +5,7 @@ extends KinematicBody2D
 var state = "Waiting"
 # var b = "text"
 export var speed = 300
-export var attack_dist = 20
+export var attack_dist = 70
 var look_dir = Vector2(1.0, 0.0)
 var dist_to_light = 1.0
 export var see_dist = 500
@@ -14,6 +14,7 @@ onready var target = get_parent().get_parent().get_node("PlayerController/MoveCo
 onready var navi2d = get_parent().get_node("Navigation2D")
 var in_light = false
 var in_intense_light = false
+var target_eliminated = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -63,6 +64,8 @@ func _physics_process(delta):
 				if(path.size()>1):
 					move_and_slide(position.direction_to(path[1])*speed)
 		"Attacking":
-			pass
+			if(!target_eliminated):
+				get_parent().get_parent().death_is_now()
+				target_eliminated = true
 	look_at(look_dir)
 #	pass
