@@ -24,4 +24,3 @@ func turn_lamp_off():
 func _process(delta):
 	if(lamp_is_on):
 		lamp_oil -= lamp_oil_consume_rate*delta
-	print(lamp_oil)
