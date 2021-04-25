@@ -13,7 +13,8 @@ func _ready():
 func interact_with_interactable():
 	for area in $PlayerBody/InteractArea.get_overlapping_areas():
 		print(area)
-		area.get_parent().interact_object()
+		if (area.collision_mask == 2):
+			area.get_parent().interact_object()
 
 func handle_inputs():
 	if Input.is_action_just_pressed("pause"):	

@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Objects/LightSource.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0
 
 [node name="LightSource" type="Node2D"]
 z_index = 5
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -16,6 +18,7 @@ position = Vector2( 5.04538, 0 )
 scale = Vector2( 0.990146, 1 )
 z_index = 5
 texture = ExtResource( 1 )
+texture_scale = 4.0
 mode = 3
 shadow_enabled = true
 
