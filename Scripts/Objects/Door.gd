@@ -5,6 +5,9 @@ extends Sprite
 # var a = 2
 # var b = "text"
 
+var door_closed_sprite = preload("res://Grafiikka/Kartta/ovi kiinni.png")
+var door_open_sprite = preload("res://Grafiikka/Kartta/oviauki.png")
+
 var door_open = false
 
 func interact_object():
@@ -14,11 +17,17 @@ func interact_object():
 		open_door()
 
 func open_door():
-	$Door.rotate(-5 * PI / 4)
+	$Door.texture = door_open_sprite
+	$Door.position -= Vector2(130, -20)
+	$ovi_varjo.light_mask = 4
+	$OviSB/ovi.disabled = true
 	door_open = true
 
 func close_door():
-	$Door.rotate(5 * PI / 4)
+	$Door.texture = door_closed_sprite
+	$Door.position += Vector2(130, -20)
+	$ovi_varjo.light_mask = 1
+	$OviSB/ovi.disabled = false
 	door_open = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
