@@ -34,7 +34,6 @@ func intense_burn_animation():
 
 func _ready():
 	$Tween.connect("tween_all_completed", self, "intense_burn_animation")
-	print($Light2D.energy)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -1,9 +1,13 @@
 extends Node2D
 
 var current_stage = 0
+
 var maps = [ 
 	"res://Scenes/Maps/Map0.tscn",
-	"res://Scenes/Maps/Map1.tscn"
+	"res://Scenes/Maps/Map1.tscn",
+	"res://Scenes/Maps/Map2.tscn",
+	"res://Scenes/Maps/Map3.tscn",
+	"res://Scenes/Maps/Map4.tscn"
 ]
 
 func _ready():

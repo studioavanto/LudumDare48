@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Maps/Map0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Images/test.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/UI/ChangeSceneRect.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Terrain.gd" type="Script" id=5]
 [ext_resource path="res://Grafiikka/UI/Lamppu/lamppu6.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/UI/Fuel.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Nodes/MusicManager.tscn" type="PackedScene" id=9]
@@ -19,7 +18,6 @@ script = ExtResource( 3 )
 [node name="PlayerController" parent="." instance=ExtResource( 10 )]
 
 [node name="Terrain" parent="." instance=ExtResource( 1 )]
-script = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -37,11 +35,10 @@ __meta__ = {
 
 [node name="ChangeSceneRect" type="TextureRect" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -80.6907
-margin_top = -88.9181
-margin_right = 1967.31
-margin_bottom = 1959.08
-rect_scale = Vector2( 0.6, 0.5 )
+margin_right = 3888.0
+margin_bottom = 3086.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 texture = ExtResource( 2 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -52,3 +49,11 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ChangeSceneRect"]
 one_shot = true
+
+[node name="SceneText" type="RichTextLabel" parent="CanvasLayer/ChangeSceneRect"]
+modulate = Color( 0, 0, 0, 0 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

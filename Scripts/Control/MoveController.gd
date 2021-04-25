@@ -7,6 +7,7 @@ var previous_look_dir = Vector2(1.0, 0.0)
 var angle = 0.0
 export var aim_distance  = 100.0
 var intense_burn_last_step = false
+var walking = false
 
 func _ready():
 	control_id = 0
@@ -38,12 +39,18 @@ func handle_inputs():
 			$PlayerBody/Inventory_node.intense_burn()
 			$PlayerBody/Sprite/LightSource.toggle_intense_light()
 	
-	
 	velocity.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	velocity.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	
 	velocity = speed*velocity.normalized()
 	
+	if velocity == Vector2(0.0, 0.0) and walking:
+		$PlayerBody/Sprite.animation = "default"
+		walking = false
+	elif velocity != Vector2(0.0, 0.0) and !walking:
+		$PlayerBody/Sprite.animation = "walk"
+		walking = true
+
 	if(velocity.length() > 0.01):
 		$PlayerBody/Sprite.rotation = lerp_angle($PlayerBody/Sprite.rotation, 3.14159/2 + velocity.angle(), 0.1)
 	$PlayerBody.move_and_slide(velocity)
