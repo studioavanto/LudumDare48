@@ -52,6 +52,8 @@ func destroy_current_map():
 
 func load_next_map():
 	add_child(load(maps[(1+current_stage) / 2]).instance())
+	for child in get_children():
+		print(child.name)
 	set_player_to_start_location()
 
 func start_next_map():
