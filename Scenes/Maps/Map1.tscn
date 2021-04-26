@@ -1,12 +1,11 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scenes/Nodes/Walls.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Resources/Images/floor_gray.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Nodes/Pickuppable-object.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Nodes/Collisions.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Nodes/Doors/DoorDoubleHorizontal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Nodes/Lamp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Nodes/Doors/DoorHorizontal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Grafiikka/Kartta/Ovet/ovipalikka_vihreä.png" type="Texture" id=6]
-[ext_resource path="res://Resources/Images/floor_brown.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Grafiikka/Kartta/kartta0_pohja.png" type="Texture" id=9]
 [ext_resource path="res://Grafiikka/Kartta/Ovet/ovipalikka_harmaa.png" type="Texture" id=10]
@@ -16,123 +15,70 @@
 [ext_resource path="res://Scripts/Objects/Lamps.gd" type="Script" id=14]
 [ext_resource path="res://Scripts/Ai/Monsters.gd" type="Script" id=15]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
-
-[sub_resource type="TileSet" id=4]
-0/name = "floor_brown.png 0"
-0/texture = ExtResource( 7 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 64, 64 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "floor_gray.png 1"
-1/texture = ExtResource( 2 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 64, 64 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/occluder = SubResource( 2 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 3 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-
-[sub_resource type="NavigationPolygon" id=5]
-vertices = PoolVector2Array( 3595.73, -1565.57, 3513.55, 6370.75, 3433.25, 2720.03, 3427.32, 1339.2, 2893.62, 4550.79, 2893.62, 2720.03, -1522.08, 6468.49, 907.093, 5342.05, 2887.69, 1308.17, 2887.69, -507.081, -1499.67, -1585.12, 1458.58, -491.566, 913.023, 2689, 1440.79, 2689, 1452.65, 4550.79, 1452.65, 1323.68, -1103.16, 1339.2, -1079.44, 5342.05, 1612.76, 4287.03, 1600.9, 2859.66, 1701.71, 2890.69, 2727.58, 4287.03, -954.908, 5031.75, -960.838, 2813.12, -806.659, 2828.63, 444.558, 2859.66, 729.195, 2828.63, 746.985, 5047.27, -545.742, 2828.63, 2727.58, 2875.18, 1921.11, 2875.18, 1701.71, 2440.76, 1921.11, 2425.24, 2733.51, -103.692, 2733.51, 1323.68, 1938.9, 1308.17, 1606.83, -103.692, 1606.83, 1323.68, 1713.57, 1323.68, 1701.71, 1711.56, 1938.9, 1696.04, 2869.9, 1696.04, 2875.83, 2425.24, 438.628, 2440.76, -954.908, 1696.04, 183.641, 2440.76, -545.742, 2425.24, -966.768, 2409.73, -800.729, 2440.76, 177.711, 2813.12 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 2, 1 ), PoolIntArray( 4, 1, 6, 7 ), PoolIntArray( 0, 3, 8, 9 ), PoolIntArray( 10, 0, 9, 11 ), PoolIntArray( 7, 12, 13, 14 ), PoolIntArray( 11, 15, 16, 10 ), PoolIntArray( 6, 10, 16, 17 ), PoolIntArray( 6, 17, 7 ), PoolIntArray( 4, 7, 14 ), PoolIntArray( 18, 19, 20, 21 ), PoolIntArray( 22, 23, 24 ), PoolIntArray( 25, 26, 27, 22 ), PoolIntArray( 25, 22, 24, 28 ), PoolIntArray( 29, 21, 20, 30 ), PoolIntArray( 30, 20, 31, 32 ), PoolIntArray( 33, 34, 35, 36 ), PoolIntArray( 37, 36, 35, 38 ), PoolIntArray( 39, 38, 35, 40, 32, 31 ), PoolIntArray( 41, 42, 32, 40 ), PoolIntArray( 39, 31, 43, 44 ), PoolIntArray( 44, 43, 45, 46, 47 ), PoolIntArray( 48, 47, 46 ), PoolIntArray( 48, 46, 28, 24 ), PoolIntArray( 25, 28, 49 ), PoolIntArray( 43, 25, 49, 45 ) ]
-outlines = [ PoolVector2Array( -1499.67, -1585.12, 3595.73, -1565.57, 3513.55, 6370.75, -1522.08, 6468.49 ), PoolVector2Array( -1103.16, 1339.2, -1079.44, 5342.05, 907.093, 5342.05, 913.023, 2689, 1440.79, 2689, 1452.65, 4550.79, 2893.62, 4550.79, 2893.62, 2720.03, 3433.25, 2720.03, 3427.32, 1339.2, 2887.69, 1308.17, 2887.69, -507.081, 1458.58, -491.566, 1452.65, 1323.68 ), PoolVector2Array( -960.838, 2813.12, -954.908, 5031.75, 746.985, 5047.27, 729.195, 2828.63, 444.558, 2859.66, 438.628, 2440.76, 1701.71, 2440.76, 1701.71, 2890.69, 1600.9, 2859.66, 1612.76, 4287.03, 2727.58, 4287.03, 2727.58, 2875.18, 1921.11, 2875.18, 1921.11, 2425.24, 2875.83, 2425.24, 2869.9, 1696.04, 1938.9, 1696.04, 1938.9, 1308.17, 2733.51, 1323.68, 2733.51, -103.692, 1606.83, -103.692, 1606.83, 1323.68, 1713.57, 1323.68, 1701.71, 1711.56, -954.908, 1696.04, -966.768, 2409.73, -800.729, 2440.76, -806.659, 2828.63 ), PoolVector2Array( -545.742, 2425.24, -545.742, 2828.63, 177.711, 2813.12, 183.641, 2440.76 ) ]
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 3482.87, -1487.75, 3513.55, 6370.75, 3340.71, 2789.54, 3340.71, 1301.78, 907.093, 5342.05, 913.023, 2689, 1492.66, 2789.54, 1492.66, 4649.23, 2893.62, 4550.79, 2893.62, 2720.03, -1522.08, 6468.49, 2887.69, 1308.17, 2887.69, -507.081, -1499.67, -1585.12, 1492.66, -557.907, 1492.66, 1301.78, -1066.18, 1301.78, -1079.44, 5342.05, 1612.76, 4287.03, 1600.9, 2859.66, 1701.71, 2890.69, 2727.58, 4287.03, 1705.9, 1301.78, 1606.83, 1323.68, 1606.83, -103.692, 2733.51, -103.692, -954.908, 5031.75, -960.838, 2813.12, -806.659, 2828.63, 781.869, 5021.17, 2727.58, 2875.18, 1921.11, 2875.18, 1921.11, 2425.24, 1701.71, 2440.76, 1705.9, 1673.72, 2733.51, 1323.68, 1990.21, 1301.78, 1990.21, 1673.72, 2869.9, 1696.04, 2875.83, 2425.24, -954.908, 1696.04, 426.474, 2417.6, -966.768, 2409.73, 142.158, 2417.6, 426.474, 2789.54, 142.158, 2789.54, -545.742, 2425.24, -800.729, 2440.76, -545.742, 2828.63, 781.869, 2789.54 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 2, 1 ), PoolIntArray( 8, 1, 10, 4 ), PoolIntArray( 3, 11, 12, 0 ), PoolIntArray( 13, 0, 12, 14 ), PoolIntArray( 14, 15, 16, 13 ), PoolIntArray( 10, 13, 16, 17 ), PoolIntArray( 10, 17, 4 ), PoolIntArray( 8, 4, 7 ), PoolIntArray( 18, 19, 20, 21 ), PoolIntArray( 22, 23, 24, 25 ), PoolIntArray( 26, 27, 28, 29 ), PoolIntArray( 30, 21, 20, 31 ), PoolIntArray( 32, 31, 20, 33, 34 ), PoolIntArray( 25, 35, 36 ), PoolIntArray( 22, 25, 36, 34 ), PoolIntArray( 37, 38, 39, 32, 34 ), PoolIntArray( 34, 36, 37 ), PoolIntArray( 40, 34, 33, 41 ), PoolIntArray( 42, 40, 41, 43 ), PoolIntArray( 41, 44, 45, 43 ), PoolIntArray( 42, 43, 46 ), PoolIntArray( 47, 42, 46 ), PoolIntArray( 47, 46, 48, 28 ), PoolIntArray( 29, 28, 48 ), PoolIntArray( 49, 29, 48, 44 ), PoolIntArray( 44, 48, 45 ) ]
+outlines = [ PoolVector2Array( -1499.67, -1585.12, 3482.87, -1487.75, 3513.55, 6370.75, -1522.08, 6468.49 ), PoolVector2Array( -1066.18, 1301.78, -1079.44, 5342.05, 907.093, 5342.05, 913.023, 2689, 1492.66, 2789.54, 1492.66, 4649.23, 2893.62, 4550.79, 2893.62, 2720.03, 3340.71, 2789.54, 3340.71, 1301.78, 2887.69, 1308.17, 2887.69, -507.081, 1492.66, -557.907, 1492.66, 1301.78 ), PoolVector2Array( -960.838, 2813.12, -954.908, 5031.75, 781.869, 5021.17, 781.869, 2789.54, 426.474, 2789.54, 426.474, 2417.6, 1701.71, 2440.76, 1701.71, 2890.69, 1600.9, 2859.66, 1612.76, 4287.03, 2727.58, 4287.03, 2727.58, 2875.18, 1921.11, 2875.18, 1921.11, 2425.24, 2875.83, 2425.24, 2869.9, 1696.04, 1990.21, 1673.72, 1990.21, 1301.78, 2733.51, 1323.68, 2733.51, -103.692, 1606.83, -103.692, 1606.83, 1323.68, 1705.9, 1301.78, 1705.9, 1673.72, -954.908, 1696.04, -966.768, 2409.73, -800.729, 2440.76, -806.659, 2828.63 ), PoolVector2Array( -545.742, 2425.24, -545.742, 2828.63, 142.158, 2789.54, 142.158, 2417.6 ) ]
 
 [node name="Terrain" type="Node2D"]
 script = ExtResource( 12 )
 
-[node name="Walls" parent="." instance=ExtResource( 1 )]
-tile_set = SubResource( 4 )
-show_collision = true
-tile_data = PoolIntArray(  )
-
 [node name="kartta1" type="Sprite" parent="."]
 light_mask = 3
-position = Vector2( 907.324, 830.194 )
 texture = ExtResource( 9 )
 
-[node name="DoorObject" parent="kartta1" instance=ExtResource( 5 )]
-position = Vector2( 716.834, 88.4847 )
-texture = ExtResource( 6 )
-
-[node name="DoorObject2" parent="kartta1" instance=ExtResource( 5 )]
-position = Vector2( 731.758, -299.98 )
-texture = ExtResource( 10 )
-
 [node name="StartLocation" type="Node2D" parent="."]
-position = Vector2( -597.858, 1520.04 )
+position = Vector2( 704, 448 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
-visible = false
 scale = Vector2( 1, 1.00295 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+visible = false
+position = Vector2( -960, -829.553 )
 scale = Vector2( 0.900407, 0.343131 )
 z_index = 8
-navpoly = SubResource( 5 )
+navpoly = SubResource( 1 )
 
 [node name="DoorObjectHorizontal2" parent="." instance=ExtResource( 3 )]
-position = Vector2( -604.625, 911 )
+position = Vector2( -1517.66, 67.3811 )
 
 [node name="DoorObjectHorizontal3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 280.447, 909.21 )
+position = Vector2( -640, 64 )
 texture = ExtResource( 11 )
 
 [node name="EndBed" parent="." instance=ExtResource( 13 )]
-position = Vector2( 2547.78, 712.742 )
+position = Vector2( 1664, -128 )
 rotation = 1.5708
 
 [node name="Lamps" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 14 )
 
 [node name="Lamp" parent="Lamps" instance=ExtResource( 4 )]
-position = Vector2( 1577.07, 1350.87 )
+position = Vector2( -1664, 320 )
 
 [node name="Lamp2" parent="Lamps" instance=ExtResource( 4 )]
-position = Vector2( 2261.75, 1056.87 )
+position = Vector2( -1600, 640 )
+
+[node name="Pickuppable-object" parent="Lamps/Lamp2" instance=ExtResource( 1 )]
+position = Vector2( 3072, -1472 )
 
 [node name="Monsters" type="Node" parent="."]
 script = ExtResource( 15 )
 
 [node name="Monster" parent="Monsters" instance=ExtResource( 8 )]
-position = Vector2( 2005.97, 161.991 )
+position = Vector2( 704, -704 )
 speed = 300
 light_slowdown = 0.1
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+visible = true
+tile_data = PoolIntArray( -524285, 0, 1, -524284, 0, 196610, -524283, 0, 196610, -524282, 0, 196610, -524281, 0, 196610, -524280, 0, 196610, -524279, 0, 196610, -524278, 0, 196610, -524277, 0, 196610, -524276, 0, 3, -458749, 0, 65536, -458740, 0, 65536, -393213, 0, 65536, -393204, 0, 65536, -327677, 0, 65536, -327668, 0, 65536, -262141, 0, 65536, -262132, 0, 65536, -131087, 0, 1, -131086, 0, 196610, -131085, 0, 196610, -131084, 0, 196610, -131083, 0, 196610, -131082, 0, 196610, -131081, 0, 196610, -131080, 0, 196610, -131079, 0, 196610, -131078, 0, 196610, -131077, 0, 196610, -131076, 0, 196610, -131075, 0, 196610, -131074, 0, 196610, -131073, 0, 196610, -196608, 0, 196610, -196607, 0, 196610, -196606, 0, 196610, -196605, 0, 131075, -196601, 0, 196609, -196600, 0, 196610, -196599, 0, 196610, -196598, 0, 196610, -196597, 0, 196610, -196596, 0, 131074, -196595, 0, 196610, -196594, 0, 196610, -196593, 0, 3, -65551, 0, 65536, -131057, 0, 65536, -15, 0, 65536, -65521, 0, 65536, 65521, 0, 65536, 65526, 0, 196609, 65527, 0, 196610, 65528, 0, 196611, 65533, 0, 196609, 65534, 0, 2, 65535, 0, 196610, 0, 0, 196610, 1, 0, 196610, 2, 0, 196610, 3, 0, 3, 7, 0, 196609, 8, 0, 196610, 9, 0, 196610, 10, 0, 196610, 11, 0, 196610, 12, 0, 2, 13, 0, 196610, 14, 0, 196610, 15, 0, 131075, 131057, 0, 65536, 131070, 0, 65536, 65539, 0, 65536, 65548, 0, 65536, 196593, 0, 65536, 196606, 0, 65536, 131075, 0, 65536, 131084, 0, 65536, 262129, 0, 65536, 262142, 0, 65536, 196611, 0, 65536, 196620, 0, 65536, 327665, 0, 65536, 327678, 0, 65536, 262147, 0, 65536, 262156, 0, 65536, 393201, 0, 65536, 393214, 0, 65536, 327683, 0, 131073, 327684, 0, 196610, 327685, 0, 196610, 327686, 0, 196610, 327687, 0, 196610, 327688, 0, 196610, 327689, 0, 196610, 327690, 0, 196610, 327691, 0, 196610, 327692, 0, 131075, 458737, 0, 65536, 458750, 0, 65536, 524273, 0, 131073, 524274, 0, 196610, 524275, 0, 196610, 524276, 0, 196610, 524277, 0, 196610, 524278, 0, 196610, 524279, 0, 196610, 524280, 0, 196610, 524281, 0, 196610, 524282, 0, 196610, 524283, 0, 196610, 524284, 0, 196610, 524285, 0, 196610, 524286, 0, 131075 )
+
+[node name="DoorObject2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 731.758, -299.98 )
+texture = ExtResource( 10 )
+
+[node name="DoorObject" parent="." instance=ExtResource( 5 )]
+position = Vector2( 716.834, 88.4847 )
+texture = ExtResource( 6 )
