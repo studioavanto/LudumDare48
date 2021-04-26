@@ -17,6 +17,7 @@ func interact_object():
 		open_door()
 
 func open_door():
+	get_tree().root.get_node("Game/GeneralSoundEffects").play_sound("door_open")
 	$Door.texture = door_open_sprite
 	$Door.position -= Vector2(130, -20)
 	$ovi_varjo.light_mask = 4
@@ -24,6 +25,7 @@ func open_door():
 	door_open = true
 
 func close_door():
+	get_tree().root.get_node("Game/GeneralSoundEffects").play_sound("door_close")
 	$Door.texture = door_closed_sprite
 	$Door.position += Vector2(130, -20)
 	$ovi_varjo.light_mask = 1

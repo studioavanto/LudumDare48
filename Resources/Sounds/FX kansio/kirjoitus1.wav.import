@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kirjoitus1.wav-4452314455f3aeb92ccc0435d352ed92.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/FX kansio/kirjoitus1.wav"
+dest_files=[ "res://.import/kirjoitus1.wav-4452314455f3aeb92ccc0435d352ed92.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

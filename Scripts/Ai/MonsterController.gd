@@ -22,8 +22,9 @@ func _ready():
 
 func destroy_monster():
 	state = "Dying"
+	$AnimationPlayer.play("Die")
 	$Timer.connect("timeout",self,"queue_free")
-	$Timer.start(1.5)
+	$Timer.start(1)
 
 func go_hunting():
 	state = "Hunting"

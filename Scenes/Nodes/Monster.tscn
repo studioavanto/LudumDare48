@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Grafiikka/Hahmo/monsteri.png" type="Texture" id=1]
+[ext_resource path="res://Grafiikka/Monsters/monsteri02.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Ai/MonsterController.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=3]
 
@@ -9,6 +9,22 @@ radius = 40.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 100.0
+
+[sub_resource type="Animation" id=4]
+resource_name = "Die"
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19, 20, 21, 22 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
@@ -40,8 +56,8 @@ shape = SubResource( 1 )
 z_index = 4
 texture = ExtResource( 1 )
 hframes = 4
-vframes = 4
-frame = 14
+vframes = 6
+frame = 22
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -54,6 +70,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
+anims/Die = SubResource( 4 )
 anims/idle = SubResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="."]

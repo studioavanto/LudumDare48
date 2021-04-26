@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gasp3.wav-378721872c07162ea560bfa1109449fc.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/FX kansio/gasp3.wav"
+dest_files=[ "res://.import/gasp3.wav-378721872c07162ea560bfa1109449fc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

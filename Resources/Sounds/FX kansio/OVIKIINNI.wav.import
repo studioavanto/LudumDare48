@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/OVIKIINNI.wav-a7951cb2a2a6b244e7b6f75b5e389547.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/FX kansio/OVIKIINNI.wav"
+dest_files=[ "res://.import/OVIKIINNI.wav-a7951cb2a2a6b244e7b6f75b5e389547.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

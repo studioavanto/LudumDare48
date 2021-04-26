@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kultainen_sade.wav-cd4f2508200b3d71c0d10037c661e835.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/FX kansio/kultainen_sade.wav"
+dest_files=[ "res://.import/kultainen_sade.wav-cd4f2508200b3d71c0d10037c661e835.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

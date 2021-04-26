@@ -20,7 +20,7 @@ var current_active = "None"
 var intro_scene = preload("res://Resources/Images/test.png")
 var wakeup_scene = preload("res://Grafiikka/UI/game_over.png")
 var scene_background = preload("res://Grafiikka/UI/tumma_tausta.jpeg")
-var end_screen = preload("res://Resources/Images/test.png")
+var end_screen = preload("res://Grafiikka/UI/Credits.png")
 
 func _ready():
 	$FadeOutTween.connect("tween_all_completed", self, "fade_out_completed")

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/breath_amb.wav-f66bd7c016a460e8c3d98bf218594582.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/FX kansio/breath_amb.wav"
+dest_files=[ "res://.import/breath_amb.wav-f66bd7c016a460e8c3d98bf218594582.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

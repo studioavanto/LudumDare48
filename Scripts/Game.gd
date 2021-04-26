@@ -40,6 +40,7 @@ func end_scene_if_possible():
 
 func death_is_now():
 	current_stage -= 1
+	$GeneralSoundEffects.play_sound("death_sound")
 	$PlayerController.change_game_state(2)
 	$UIContainer/ChangeSceneRect.fade_in_background()
 	$UIContainer/ChangeSceneRect.transition_to_stage("DEATH")
@@ -62,9 +63,11 @@ func move_to_next_stage():
 	if current_stage == 5 and game_stage == "INTRO":
 		current_stage = 1
 		game_stage = "GAME"
+		$MusicManager.change_song(1)
 	elif current_stage == 10 and game_stage == "GAME":
 		current_stage = 1
 		game_stage = "OUTRO"
+		$MusicManager.change_song(6)
 	elif current_stage == 3 and game_stage == "OUTRO":
 		get_tree().quit()
 	
@@ -76,6 +79,8 @@ func move_to_next_stage():
 				$PlayerController.change_game_state(2)
 				$UIContainer/ChangeSceneRect.fade_in_background()
 				$UIContainer/ChangeSceneRect.transition_to_stage("GAME", current_stage)
+				$MusicManager.change_song(1 + current_stage/2)
+				$GeneralSoundEffects.play_sound("change_map")
 			else:
 				$UIContainer/ChangeSceneRect.fade_out_background()
 				start_next_map()

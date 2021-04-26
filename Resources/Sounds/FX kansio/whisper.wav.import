@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/whisper.wav-4b53f784eb3a0e192931db54a34a8e15.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/FX kansio/whisper.wav"
+dest_files=[ "res://.import/whisper.wav-4b53f784eb3a0e192931db54a34a8e15.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

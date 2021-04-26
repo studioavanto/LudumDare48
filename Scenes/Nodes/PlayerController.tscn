@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Control/MoveController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Control/PlayerController.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Grafiikka/Hahmo/Main character - walk cycle02.png" type="Texture" id=15]
 [ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=16]
 [ext_resource path="res://Grafiikka/varjo.png" type="Texture" id=17]
+[ext_resource path="res://Scripts/Sounds/PlayerSounds.gd" type="Script" id=18]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -112,3 +113,6 @@ __meta__ = {
 
 [node name="CutsceneController" type="Node2D" parent="."]
 script = ExtResource( 4 )
+
+[node name="PlayerSounds" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 18 )

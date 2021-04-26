@@ -32,8 +32,3 @@ func fade_out():
 	)
 	
 	$FadeOut.start()
-
-func music_is_silenced():
-	stop()
-	if !transition_channel:
-		get_parent().start_next_song()	
