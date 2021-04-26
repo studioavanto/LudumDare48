@@ -1,6 +1,7 @@
 extends Node2D
 
 var current_stage = 0
+export var test = false
 
 var maps = [ 
 	"res://Scenes/Maps/Map0.tscn",
@@ -10,7 +11,13 @@ var maps = [
 	"res://Scenes/Maps/Map4.tscn"
 ]
 
+var test_map = "res://Scenes/Maps/IlmoTestMap.tscn"
+
 func _ready():
+	if test:
+		add_child(load(test_map).instance())
+	else:
+		add_child(load(maps[current_stage]).instance())
 	set_player_to_start_location()
 
 func set_player_to_start_location():

@@ -1,6 +1,6 @@
 extends Node
 
-enum GameState { CONTROL_PLAYER, CONTROL_PAUSE, CONTROL_NULL }
+enum GameState { CONTROL_PLAYER, CONTROL_PAUSE, CONTROL_CUTSCENE, CONTROL_NULL }
 
 var current_gamestate = GameState.CONTROL_PLAYER
 var next_gamestate = GameState.CONTROL_NULL
@@ -21,6 +21,12 @@ func change_game_state(new_state : int):
 		return
 
 	next_gamestate = new_state
+	if (next_gamestate == GameState.CONTROL_PAUSE):
+		get_parent().get_node("CanvasLayer/PauseScreen").fade_in()
+		get_parent().get_node("Terrain").toggle_pause()
+	if (current_gamestate == GameState.CONTROL_PAUSE):
+		get_parent().get_node("CanvasLayer/PauseScreen").fade_out()
+		get_parent().get_node("Terrain").toggle_pause()
 
 func get_gamestate():
 	return current_gamestate
@@ -31,3 +37,4 @@ func _process(_delta):
 	if next_gamestate != GameState.CONTROL_NULL:
 		current_gamestate = next_gamestate
 		next_gamestate = GameState.CONTROL_NULL
+	

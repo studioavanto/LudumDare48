@@ -38,6 +38,9 @@ func reset_inventory():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if get_parent().get_parent().get_parent().current_gamestate != 0:
+		return
+
 	if(lamp_is_on and lamp_oil > 0.0):
 		lamp_oil -= lamp_oil_consume_rate*delta
 	if(lamp_is_on and lamp_oil <= 0.0):
