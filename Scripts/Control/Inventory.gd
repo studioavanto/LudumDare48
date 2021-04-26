@@ -17,10 +17,9 @@ func intense_burn():
 		lamp_oil -= intense_burn_cost
 	elif(lamp_is_on):
 		lamp_oil = 0.0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+	
+	get_tree().root.get_node("Game/GeneralSoundEffectsSC").play_sound("intense_burn")
+	
 func toggle_lamp():
 	if(lamp_is_on):
 		turn_lamp_off()

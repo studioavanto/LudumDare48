@@ -42,6 +42,7 @@ func transition_to_stage(game_stage, stage_id = -1):
 					fade_in_text(INTRO_TEXT_1)
 				3:
 					fade_in_image("wakeup")
+					get_parent().get_parent().get_node("GeneralSoundEffects").play_sound("gasp")
 				4:
 					fade_in_text(INTRO_TEXT_2)
 		"GAME":

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/heratys_gasp.wav-4b63edd470dbc3d7dcac5768c2b20925.sample"
+
+[deps]
+
+source_file="res://Resources/Sounds/FX kansio/heratys_gasp.wav"
+dest_files=[ "res://.import/heratys_gasp.wav-4b63edd470dbc3d7dcac5768c2b20925.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
