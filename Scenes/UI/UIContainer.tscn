@@ -37,7 +37,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 INTRO_TEXT_1 = "I've always had trouble sleeping in the dark."
-INTRO_TEXT_2 = "I saw him again in my dream"
+INTRO_TEXT_2 = "I saw him again."
 GAME_TEXT_1 = "\"Son, why don't you ever visit?\""
 GAME_TEXT_2 = "\"My son has been to lenient on you boy\""
 GAME_TEXT_3 = "\"Fetch me more wine boy\""
