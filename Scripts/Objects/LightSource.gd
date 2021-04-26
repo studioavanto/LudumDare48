@@ -7,6 +7,8 @@ onready var noise = OpenSimplexNoise.new()
 var value = 0.0
 const MAX_VALUE = 100000000
 onready var default_position = position
+onready var default_energy = $Light2D.energy
+onready var default_texture_scale = $Light2D.texture_scale
 
 func turn_on_light():
 	if(!light_on):
@@ -25,8 +27,8 @@ func toggle_intense_light():
 		$LightHitBox.collision_mask = 32
 		intense_light = true
 		end_tween_cycle = false
-		$Tween.interpolate_property($Light2D,"texture_scale",4.0, 6.0, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.interpolate_property($Light2D,"energy",1.0, 2.0, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Light2D,"texture_scale",default_texture_scale, default_texture_scale*1.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Light2D,"energy",default_energy, default_energy*2, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 	else:
 		intense_light = false
@@ -37,8 +39,8 @@ func toggle_intense_light():
 
 func intense_burn_animation():
 	if(!end_tween_cycle):
-		$Tween.interpolate_property($Light2D,"texture_scale",6.0, 4.0, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.interpolate_property($Light2D,"energy",2.0, 1.0, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Light2D,"texture_scale",default_texture_scale*1.5, default_texture_scale, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Light2D,"energy",default_energy*2, default_energy, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 		end_tween_cycle = true
 
@@ -49,7 +51,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	return
 	value += 0.5
 	if(value > MAX_VALUE):
 		value = 0.0
