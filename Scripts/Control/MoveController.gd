@@ -26,8 +26,9 @@ func handle_inputs():
 		interact_with_interactable()
 	
 	if Input.is_action_just_pressed("togglelight"):
-		$PlayerBody/Inventory_node.toggle_lamp()
-		$PlayerBody/Sprite/LightSource.toggle_light()
+		pass
+		#$PlayerBody/Inventory_node.toggle_lamp()
+		#$PlayerBody/Sprite/LightSource.toggle_light()
 	
 	if(intense_burn_last_step):
 		intense_burn_last_step = false

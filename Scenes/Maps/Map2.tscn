@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scenes/Nodes/Walls.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Images/floor_gray.png" type="Texture" id=2]
@@ -10,8 +10,27 @@
 [ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Objects/Lamps.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/Ai/Monsters.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Nodes/Objects/eteise_poyta.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/Terrain.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Nodes/Objects/EndBed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Nodes/Objects/ruokapoyta.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Nodes/Objects/kellokaappi.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Grafiikka/Kartta/Huonekalut/sohva.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Nodes/Objects/poyta.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Nodes/Objects/kaappi1.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Nodes/Objects/hella.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Nodes/Objects/tiski.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Nodes/Objects/leipapoyta.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Nodes/Objects/apupoyta_pannu.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Grafiikka/Kartta/Huonekalut/matto.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Nodes/Objects/laatikko2.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Nodes/Objects/laatikko1.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Nodes/Objects/arkku.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Nodes/Objects/koysi.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Nodes/Objects/lanttukasa.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Nodes/Objects/perunasakki.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Nodes/Message.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Nodes/MessageTrigger.tscn" type="PackedScene" id=31]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -68,14 +87,22 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 1/z_index = 0
 
 [sub_resource type="NavigationPolygon" id=5]
-vertices = PoolVector2Array( 2560.4, -671.524, 2560.4, 5485.56, 2139.7, 4643.75, 2139.7, 2960.76, -541.243, 5497.87, -4.4766, 4643.75, -545.95, -683.838, 0.510023, -0.769447, 1840.52, 12.2769, 1845.5, 2947.72, 1032.71, 4108.85, 1032.71, 4421.96, 155.091, 4421.96, 155.091, 3352.16, 299.698, 3404.34, 992.817, 3756.59, 982.844, 1029.9, 977.858, 1512.61, 304.684, 2856.39, 155.091, 2908.58, 170.05, 1108.17, 419.303, 405.739, 543.965, 405.739, 633.721, 444.879, 1296.99, 3339.11, 1551.3, 2934.67, 1556.29, 3365.2, 1147.4, 4095.8, 1157.37, 3730.5, 1292, 2947.72, 1172.33, 1029.9, 1142.41, 377.576, 1695.91, 403.669, 1695.91, 2947.72, 1152.38, 2921.62, 1152.38, 1473.47, 1690.86, 3380.33, 1695.85, 4424.05, 1147.4, 4461.1, 1142.41, 3339.11, 982.844, 3378.25, 474.224, 3378.25, 494.17, 2960.76, 643.764, 442.808, 977.858, 442.808, 150.034, 418.786, 987.831, 2934.67 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 1, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 7, 6, 0, 8 ), PoolIntArray( 8, 0, 3, 9 ), PoolIntArray( 10, 11, 12, 13, 14, 15 ), PoolIntArray( 16, 17, 18, 19, 20, 21, 22, 23 ), PoolIntArray( 24, 25, 26, 27, 28 ), PoolIntArray( 25, 24, 29 ), PoolIntArray( 30, 31, 32, 33, 25 ), PoolIntArray( 30, 25, 29, 34, 35 ), PoolIntArray( 36, 37, 38, 27, 26 ), PoolIntArray( 16, 30, 35, 17 ), PoolIntArray( 28, 39, 24 ), PoolIntArray( 15, 28, 27, 10 ), PoolIntArray( 40, 15, 14, 41 ), PoolIntArray( 41, 14, 18, 42 ), PoolIntArray( 43, 44, 16, 23 ), PoolIntArray( 20, 45, 21 ), PoolIntArray( 17, 46, 42, 18 ) ]
-outlines = [ PoolVector2Array( -545.95, -683.838, -541.243, 5497.87, 2560.4, 5485.56, 2560.4, -671.524 ), PoolVector2Array( -4.4766, 4643.75, 2139.7, 4643.75, 2139.7, 2960.76, 1845.5, 2947.72, 1840.52, 12.2769, 0.510023, -0.769447 ), PoolVector2Array( 1690.86, 3380.33, 1695.85, 4424.05, 1147.4, 4461.1, 1147.4, 4095.8, 1032.71, 4108.85, 1032.71, 4421.96, 155.091, 4421.96, 155.091, 3352.16, 299.698, 3404.34, 304.684, 2856.39, 155.091, 2908.58, 170.05, 1108.17, 150.034, 418.786, 419.303, 405.739, 543.965, 405.739, 633.721, 444.879, 643.764, 442.808, 977.858, 442.808, 982.844, 1029.9, 1172.33, 1029.9, 1142.41, 377.576, 1695.91, 403.669, 1695.91, 2947.72, 1551.3, 2934.67, 1556.29, 3365.2 ), PoolVector2Array( 494.17, 2960.76, 474.224, 3378.25, 982.844, 3378.25, 992.817, 3756.59, 1157.37, 3730.5, 1142.41, 3339.11, 1296.99, 3339.11, 1292, 2947.72, 1152.38, 2921.62, 1152.38, 1473.47, 977.858, 1512.61, 987.831, 2934.67 ) ]
+vertices = PoolVector2Array( 2560.4, -671.524, 2560.4, 5485.56, 2139.7, 4643.75, 2139.7, 2960.76, -541.243, 5497.87, -4.4766, 4643.75, -545.95, -683.838, 0.510023, -0.769447, 1840.52, 12.2769, 1845.5, 2947.72, 977.858, 1512.61, 987.831, 2934.67, 760.898, 2369.36, 760.898, 1021.48, 1504.14, 733.827, 1573.95, 2958.25, 1551.3, 2934.67, 155.091, 4421.96, 557.435, 3811.84, 904.336, 3455, 992.817, 3756.59, 1032.71, 4108.85, 1032.71, 4421.96, 155.091, 3352.16, 299.698, 3404.34, 443.629, 2369.36, 494.17, 2960.76, 304.684, 2856.39, 155.091, 2908.58, 139.824, 2081.47, 245.723, 2099.94, 1722.67, 3377.42, 1722.67, 4432.44, 1147.4, 4461.1, 1147.4, 4095.8, 1556.29, 3365.2, 1157.37, 3730.5, 1142.41, 3339.11, 1296.99, 3339.11, 1314.55, 2935.11, 1314.55, 1443.99, 1172.54, 759.92, 1172.33, 1029.9, 982.844, 1029.9, 985.551, 622.932, 826.987, 591.453, 1292, 2947.72, 437.347, 1021.48, 250.429, 1792.09, 149.237, 1761.3, 150.034, 418.786, 419.303, 405.739, 543.965, 405.739, 808.161, 400.583 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 1, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 7, 6, 0, 8 ), PoolIntArray( 8, 0, 3, 9 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 14, 15, 16 ), PoolIntArray( 17, 18, 19, 20, 21, 22 ), PoolIntArray( 17, 23, 24, 18 ), PoolIntArray( 25, 12, 11, 26, 27 ), PoolIntArray( 27, 28, 29, 30, 25 ), PoolIntArray( 31, 32, 33, 34, 35 ), PoolIntArray( 36, 37, 38 ), PoolIntArray( 14, 16, 35, 39, 40 ), PoolIntArray( 41, 14, 40, 42 ), PoolIntArray( 42, 40, 10, 43 ), PoolIntArray( 44, 43, 10, 13, 45 ), PoolIntArray( 46, 39, 35, 38 ), PoolIntArray( 38, 35, 34, 36 ), PoolIntArray( 20, 36, 34, 21 ), PoolIntArray( 26, 18, 24, 27 ), PoolIntArray( 47, 25, 30, 48 ), PoolIntArray( 47, 48, 49, 50, 51, 52 ), PoolIntArray( 45, 13, 47, 52, 53 ) ]
+outlines = [ PoolVector2Array( -545.95, -683.838, -541.243, 5497.87, 2560.4, 5485.56, 2560.4, -671.524 ), PoolVector2Array( -4.4766, 4643.75, 2139.7, 4643.75, 2139.7, 2960.76, 1845.5, 2947.72, 1840.52, 12.2769, 0.510023, -0.769447 ), PoolVector2Array( 1722.67, 3377.42, 1722.67, 4432.44, 1147.4, 4461.1, 1147.4, 4095.8, 1032.71, 4108.85, 1032.71, 4421.96, 155.091, 4421.96, 155.091, 3352.16, 299.698, 3404.34, 304.684, 2856.39, 155.091, 2908.58, 139.824, 2081.47, 245.723, 2099.94, 250.429, 1792.09, 149.237, 1761.3, 150.034, 418.786, 419.303, 405.739, 543.965, 405.739, 808.161, 400.583, 826.987, 591.453, 985.551, 622.932, 982.844, 1029.9, 1172.33, 1029.9, 1172.54, 759.92, 1504.14, 733.827, 1573.95, 2958.25, 1551.3, 2934.67, 1556.29, 3365.2 ), PoolVector2Array( 494.17, 2960.76, 557.435, 3811.84, 904.336, 3455, 992.817, 3756.59, 1157.37, 3730.5, 1142.41, 3339.11, 1296.99, 3339.11, 1292, 2947.72, 1314.55, 2935.11, 1314.55, 1443.99, 977.858, 1512.61, 987.831, 2934.67 ), PoolVector2Array( 437.347, 1021.48, 443.629, 2369.36, 760.898, 2369.36, 760.898, 1021.48 ) ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 200, 100 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 200, 200 )
 
 [node name="Terrain" type="Node2D"]
+position = Vector2( -5.99316, -11.9865 )
 script = ExtResource( 12 )
 
 [node name="Walls" parent="." instance=ExtResource( 1 )]
+visible = false
 tile_set = SubResource( 4 )
 show_collision = true
 tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 65536, 1, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 1, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 1, 0, 131072, 1, 0, 131073, 0, 0, 131086, 0, 0, 131087, 1, 0, 131096, 0, 0, 131097, 1, 0, 196608, 1, 0, 196609, 0, 0, 196622, 0, 0, 196623, 1, 0, 196632, 0, 0, 196633, 1, 0, 262144, 1, 0, 262145, 0, 0, 262158, 0, 0, 262159, 1, 0, 262168, 0, 0, 262169, 1, 0, 327680, 1, 0, 327681, 0, 0, 327704, 0, 0, 327705, 1, 0, 393216, 1, 0, 393217, 0, 0, 393240, 0, 0, 393241, 1, 0, 458752, 1, 0, 458753, 0, 0, 458776, 0, 0, 458777, 1, 0, 524288, 1, 0, 524289, 0, 0, 524302, 0, 0, 524303, 1, 0, 524312, 0, 0, 524313, 1, 0, 589824, 1, 0, 589825, 0, 0, 589838, 0, 0, 589839, 1, 0, 589848, 0, 0, 589849, 1, 0, 655360, 1, 0, 655361, 0, 0, 655374, 0, 0, 655375, 1, 0, 655384, 0, 0, 655385, 1, 0, 720896, 1, 0, 720897, 0, 0, 720910, 0, 0, 720911, 1, 0, 720920, 0, 0, 720921, 1, 0, 786432, 1, 0, 786433, 0, 0, 786446, 0, 0, 786447, 1, 0, 786456, 0, 0, 786457, 1, 0, 851968, 1, 0, 851969, 0, 0, 851982, 0, 0, 851983, 1, 0, 851992, 0, 0, 851993, 1, 0, 917504, 1, 0, 917505, 0, 0, 917518, 0, 0, 917519, 1, 0, 917528, 0, 0, 917529, 1, 0, 983040, 1, 0, 983041, 0, 0, 983054, 0, 0, 983055, 1, 0, 983064, 0, 0, 983065, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 1, 0, 1048601, 1, 0, 1048602, 1, 0, 1048603, 1, 0, 1048604, 1, 0, 1048605, 1, 0, 1114112, 1, 0, 1114113, 0, 0, 1114114, 0, 0, 1114115, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 1, 0, 1114128, 0, 0, 1114129, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 1, 0, 1179648, 1, 0, 1179649, 0, 0, 1179662, 0, 0, 1179663, 1, 0, 1179676, 0, 0, 1179677, 1, 0, 1245184, 1, 0, 1245185, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245212, 0, 0, 1245213, 1, 0, 1310720, 1, 0, 1310721, 0, 0, 1310748, 0, 0, 1310749, 1, 0, 1376256, 1, 0, 1376257, 0, 0, 1376284, 0, 0, 1376285, 1, 0, 1441792, 1, 0, 1441793, 0, 0, 1441807, 1, 0, 1441820, 0, 0, 1441821, 1, 0, 1507328, 1, 0, 1507329, 0, 0, 1507343, 1, 0, 1507356, 0, 0, 1507357, 1, 0, 1572864, 1, 0, 1572865, 1, 0, 1572866, 1, 0, 1572867, 1, 0, 1572868, 1, 0, 1572869, 1, 0, 1572870, 1, 0, 1572871, 1, 0, 1572872, 1, 0, 1572873, 1, 0, 1572874, 1, 0, 1572875, 1, 0, 1572876, 1, 0, 1572877, 1, 0, 1572878, 1, 0, 1572879, 1, 0, 1572880, 1, 0, 1572881, 1, 0, 1572882, 1, 0, 1572883, 1, 0, 1572884, 1, 0, 1572885, 1, 0, 1572886, 1, 0, 1572887, 1, 0, 1572888, 1, 0, 1572889, 1, 0, 1572890, 1, 0, 1572891, 1, 0, 1572892, 1, 0, 1572893, 1, 0 )
@@ -103,22 +130,115 @@ z_index = 8
 navpoly = SubResource( 5 )
 
 [node name="Lamps" type="Node2D" parent="."]
-visible = false
 script = ExtResource( 9 )
 
 [node name="Lamp" parent="Lamps" instance=ExtResource( 4 )]
-position = Vector2( 1105.02, 941.273 )
+position = Vector2( 598.592, 431.849 )
 
-[node name="Lamp2" parent="Lamps" instance=ExtResource( 4 )]
-position = Vector2( 1702.24, 1351.55 )
+[node name="Lamp3" parent="Lamps" instance=ExtResource( 4 )]
+position = Vector2( 183.009, 661.316 )
 
 [node name="EndBed" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1290.36, 320.987 )
+position = Vector2( 1463.1, 215.381 )
 
 [node name="Monsters" type="Node" parent="."]
 script = ExtResource( 10 )
 
 [node name="Monster" parent="Monsters" instance=ExtResource( 8 )]
-position = Vector2( 800, 700 )
+position = Vector2( 869.412, 849.502 )
 speed = 400
-light_slowdown = 0.1
+see_dist = 350
+light_slowdown = 0.8
+
+[node name="Monster2" parent="Monsters" instance=ExtResource( 8 )]
+position = Vector2( 305.31, 655.518 )
+speed = 300
+light_slowdown = 0.8
+
+[node name="matto" type="Sprite" parent="."]
+position = Vector2( 523.13, 1353.19 )
+texture = ExtResource( 23 )
+
+[node name="sohva" type="Sprite" parent="."]
+position = Vector2( 753.099, 1178.44 )
+rotation = 0.0211086
+texture = ExtResource( 16 )
+
+[node name="ObjectWithCollision" parent="." instance=ExtResource( 11 )]
+position = Vector2( 567.564, 1200.09 )
+
+[node name="ObjectWithCollision2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 508.993, 606.736 )
+
+[node name="ObjectWithCollision3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 813.337, 131.533 )
+
+[node name="ObjectWithCollision4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 177.37, 664.178 )
+
+[node name="ObjectWithCollision5" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1167.56, 177.966 )
+
+[node name="ObjectWithCollision6" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1103.65, 564.778 )
+
+[node name="ObjectWithCollision7" parent="." instance=ExtResource( 22 )]
+position = Vector2( 1107.84, 695.958 )
+
+[node name="ObjectWithCollision8" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1107.01, 897.773 )
+
+[node name="ObjectWithCollision9" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1478.88, 688.44 )
+
+[node name="ObjectWithCollision10" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1088.69, 1197.46 )
+
+[node name="ObjectWithCollision11" parent="." instance=ExtResource( 25 )]
+position = Vector2( 1766.94, 1313.36 )
+
+[node name="ObjectWithCollision12" parent="." instance=ExtResource( 24 )]
+position = Vector2( 1770.27, 1173.68 )
+
+[node name="ObjectWithCollision13" parent="." instance=ExtResource( 26 )]
+position = Vector2( 1628.41, 1187.94 )
+
+[node name="ObjectWithCollision14" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1687.58, 1457.97 )
+rotation = 1.5708
+
+[node name="ObjectWithoutCollision" parent="." instance=ExtResource( 27 )]
+position = Vector2( 1498.24, 1441.92 )
+
+[node name="ObjectWithoutCollision2" parent="." instance=ExtResource( 28 )]
+position = Vector2( 1371.25, 1467.32 )
+
+[node name="ObjectWithCollision15" parent="." instance=ExtResource( 29 )]
+position = Vector2( 1253.78, 1467.32 )
+
+[node name="MessageTrigger" parent="." instance=ExtResource( 31 )]
+position = Vector2( 317.999, 1328.29 )
+
+[node name="Message" parent="MessageTrigger" instance=ExtResource( 30 )]
+margin_left = -192.333
+margin_top = -381.838
+margin_right = 307.667
+margin_bottom = -181.838
+text = "They can't catch me behind a closed door."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger"]
+position = Vector2( 5.65686, -161.22 )
+shape = SubResource( 6 )
+
+[node name="MessageTrigger2" parent="." instance=ExtResource( 31 )]
+position = Vector2( 1231.58, 426.018 )
+
+[node name="Message" parent="MessageTrigger2" instance=ExtResource( 30 )]
+margin_left = -261.76
+margin_top = -270.077
+margin_right = 38.2405
+margin_bottom = -70.0769
+text = "Press SPACE to open or close doors."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger2"]
+shape = SubResource( 7 )

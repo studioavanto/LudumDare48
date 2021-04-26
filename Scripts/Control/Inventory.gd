@@ -2,10 +2,10 @@ extends Node
 
 # Declare member variables here. Examples:
 var lamp_oil = 1.0
-export var lamp_oil_consume_rate = 0.02 #100 seconds
+export var lamp_oil_consume_rate = 0.02
 var lamp_is_on = true
-export var intense_burn_cost = 0.50
-export var fill_amount = 0.25
+export var intense_burn_cost = 0.20
+export var fill_amount = 0.50
 
 func fill_lamp():
 	lamp_oil += fill_amount

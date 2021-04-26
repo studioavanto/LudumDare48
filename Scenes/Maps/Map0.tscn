@@ -72,7 +72,7 @@ rect_min_size = Vector2( 400, 300 )
 text = "I should go back to sleep"
 
 [node name="EndBed" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1418.43, 470.094 )
+position = Vector2( 1463.33, 514.992 )
 
 [node name="Monsters" type="Node" parent="."]
 script = ExtResource( 1 )
