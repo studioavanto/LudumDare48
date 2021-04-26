@@ -4,7 +4,6 @@ var sound_effects = {
 	"door_open": preload("res://Resources/Sounds/FX kansio/OVIAUKI.wav"),
 	"door_close": preload("res://Resources/Sounds/FX kansio/OVIKIINNI.wav"),
 	"change_map": preload("res://Resources/Sounds/FX kansio/kentan_vaihto_impact.wav"),
-	"gasp": preload("res://Resources/Sounds/FX kansio/gasp1.wav"),
 	"death_sound": preload("res://Resources/Sounds/FX kansio/dark_souls_bossi_kuoli_aani.wav"),
 	"lamp_on": preload("res://Resources/Sounds/FX kansio/LAMPPUKLIK päälle.wav"),
 	"lamp_oil": preload("res://Resources/Sounds/FX kansio/LAMPPUÖLJY KLUKKLUK.wav")
