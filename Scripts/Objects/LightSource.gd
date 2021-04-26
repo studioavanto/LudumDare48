@@ -14,11 +14,11 @@ func turn_on_light():
 
 func toggle_light():
 	light_on = !light_on
-	$Light2D.enabled = light_on
 	if light_on:
 		$LightHitBox.collision_mask = 1
 	else:
 		$LightHitBox.collision_mask = 8
+	$Light2D.enabled = light_on
 
 func toggle_intense_light():
 	if(!intense_light and light_on):
@@ -49,11 +49,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	return
 	value += 0.5
 	if(value > MAX_VALUE):
 		value = 0.0
 	var alpha = ((noise.get_noise_1d(value) +1) /4.0) + 0.5
 	$Light2D.color = Color($Light2D.color.r, $Light2D.color.g, $Light2D.color.b, alpha)
 	position = default_position + Vector2(cos(OS.get_ticks_msec()/1000.0),alpha)*sin(OS.get_ticks_msec()/200.0)
-
-pass

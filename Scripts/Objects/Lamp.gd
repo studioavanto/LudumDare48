@@ -1,15 +1,30 @@
 extends Sprite
 
+export var lamp_timer = 0.0
 var lamp_on = false
-var message_shown = false
 
 func _ready():
 	$LightSource.toggle_light()
+	$Timer.connect("timeout", self, "close_lamp")
+	$Timer.wait_time = lamp_timer
 
 func interact_object():
-	if not message_shown and $Message != null:
-		message_shown = true
+	if $Message != null:
 		$Message.fade_to_view()
 
+	if not lamp_on:
+		$LightSource.toggle_light()
+		lamp_on = true
+		
+		if lamp_timer > 0.0:
+			$Timer.start()
+			
+		get_parent().lit_lamp()
+
+func close_lamp():
 	$LightSource.toggle_light()
-	lamp_on = !lamp_on
+	lamp_on = false
+	get_parent().close_lamp()
+
+func permanent_light():
+	$Timer.stop()

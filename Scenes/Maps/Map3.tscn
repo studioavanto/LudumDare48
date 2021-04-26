@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Nodes/Walls.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Images/floor_gray.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Scenes/Nodes/Doors/DoorVertical.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Images/floor_brown.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Ai/Monsters.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Objects/Lamps.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/Terrain.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Nodes/Objects/EndBed.tscn" type="PackedScene" id=13]
 
@@ -91,11 +93,6 @@ position = Vector2( 208.542, 1345.43 )
 [node name="DoorObjectHorizontal" parent="." instance=ExtResource( 6 )]
 position = Vector2( 971.377, 452.097 )
 
-[node name="Monster" parent="." instance=ExtResource( 8 )]
-position = Vector2( 800, 700 )
-speed = 400
-light_slowdown = 0.1
-
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
 scale = Vector2( 1, 1.00295 )
@@ -106,6 +103,7 @@ z_index = 8
 navpoly = SubResource( 5 )
 
 [node name="Lamps" type="Node2D" parent="."]
+script = ExtResource( 10 )
 
 [node name="Lamp" parent="Lamps" instance=ExtResource( 4 )]
 position = Vector2( 1120.14, 926.154 )
@@ -115,3 +113,11 @@ position = Vector2( 1702.24, 1351.55 )
 
 [node name="EndBed" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1290.36, 320.987 )
+
+[node name="Monsters" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="Monster" parent="Monsters" instance=ExtResource( 8 )]
+position = Vector2( 800, 700 )
+speed = 400
+light_slowdown = 0.1

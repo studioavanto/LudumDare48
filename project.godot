@@ -83,5 +83,5 @@ unpause={
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.0392157, 0.0313726, 0.0784314, 1 )
 environment/default_environment="res://default_env.tres"

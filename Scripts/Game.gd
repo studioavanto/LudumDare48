@@ -38,7 +38,9 @@ func end_scene_if_possible():
 
 func death_is_now():
 	current_stage -= 1
-	$UIContainer/ChangeSceneRect.transition_to_stage("death")
+	$PlayerController.change_game_state(2)
+	$UIContainer/ChangeSceneRect.fade_in_background()
+	$UIContainer/ChangeSceneRect.transition_to_stage("DEATH")
 
 func destroy_current_map():
 	if game_stage == "GAME":
