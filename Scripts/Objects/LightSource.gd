@@ -27,8 +27,8 @@ func toggle_intense_light():
 		$LightHitBox.collision_mask = 32
 		intense_light = true
 		end_tween_cycle = false
-		$Tween.interpolate_property($Light2D,"texture_scale",default_texture_scale, default_texture_scale*1.5, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.interpolate_property($Light2D,"energy",default_energy, default_energy*2, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Light2D,"texture_scale",default_texture_scale, default_texture_scale*1.5, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Light2D,"energy",default_energy, default_energy*2, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 	else:
 		intense_light = false
@@ -39,8 +39,8 @@ func toggle_intense_light():
 
 func intense_burn_animation():
 	if(!end_tween_cycle):
-		$Tween.interpolate_property($Light2D,"texture_scale",default_texture_scale*1.5, default_texture_scale, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$Tween.interpolate_property($Light2D,"energy",default_energy*2, default_energy, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Light2D,"texture_scale",default_texture_scale*1.5, default_texture_scale, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$Tween.interpolate_property($Light2D,"energy",default_energy*2, default_energy, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 		end_tween_cycle = true
 

@@ -7,7 +7,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
-start_stage = 1
+start_stage = 3
 
 [node name="PlayerController" parent="." instance=ExtResource( 3 )]
 

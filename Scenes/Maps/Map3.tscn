@@ -1,31 +1,75 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://Scenes/Nodes/Lamp.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Nodes/Pickuppable-object.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Grafiikka/Kartta/kartta3.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Nodes/Collisions.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/Ai/Monsters.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/Objects/Lamps.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/Terrain.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Nodes/Objects/EndBed.tscn" type="PackedScene" id=13]
 
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 798.128, 728.696, -1657.82, 728.696, -1648.84, 688.406, -1020.26, 576.49, -890.055, 576.49, -2169.66, -68.1468, -2169.66, -323.315, -899.035, -318.839, -899.035, -63.6701, 2172.55, -1084.34, 2181.53, 451.144, 1400.29, 455.621, 1390.79, 213.882, -1653.33, 70.6292, -1033.73, 61.6758, -894.545, -941.092, 784.658, 209.405, -1015.77, -941.092, -1024.75, -448.661, -1662.31, -453.138, -1666.8, -1093.3 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12 ), PoolIntArray( 2, 13, 14, 3 ), PoolIntArray( 15, 16, 0, 4, 8, 7 ), PoolIntArray( 17, 18, 19, 20 ), PoolIntArray( 17, 20, 9, 15 ), PoolIntArray( 15, 9, 12, 16 ) ]
+outlines = [ PoolVector2Array( -1666.8, -1093.3, -1662.31, -453.138, -1024.75, -448.661, -1015.77, -941.092, -894.545, -941.092, -899.035, -318.839, -2169.66, -323.315, -2169.66, -68.1468, -899.035, -63.6701, -890.055, 576.49, -1020.26, 576.49, -1033.73, 61.6758, -1653.33, 70.6292, -1648.84, 688.406, -1657.82, 728.696, 798.128, 728.696, 784.658, 209.405, 1390.79, 213.882, 1400.29, 455.621, 2181.53, 451.144, 2172.55, -1084.34 ) ]
+
 [node name="Terrain" type="Node2D"]
 script = ExtResource( 12 )
 
 [node name="kartta1" type="Sprite" parent="."]
-position = Vector2( 907.324, 830.194 )
 texture = ExtResource( 3 )
 
 [node name="StartLocation" type="Node2D" parent="."]
-position = Vector2( 208.542, 1345.43 )
+position = Vector2( -1984, -192 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
-visible = false
 scale = Vector2( 1, 1.00295 )
 
-[node name="Lamps" type="Node2D" parent="."]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 visible = false
+navpoly = SubResource( 1 )
+
+[node name="Lamps" type="Node2D" parent="."]
 script = ExtResource( 10 )
 
+[node name="Lamp3" parent="Lamps" instance=ExtResource( 1 )]
+position = Vector2( 1600, 320 )
+
+[node name="Lamp" parent="Lamps" instance=ExtResource( 1 )]
+position = Vector2( -1600, 256 )
+
+[node name="Lamp2" parent="Lamps" instance=ExtResource( 1 )]
+position = Vector2( -1600, -640 )
+
+[node name="Lamp4" parent="Lamps" instance=ExtResource( 1 )]
+position = Vector2( 1984, 320 )
+
 [node name="EndBed" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1290.36, 320.987 )
+position = Vector2( 1920, -1024 )
 
 [node name="Monsters" type="Node" parent="."]
 script = ExtResource( 9 )
+
+[node name="Monster" parent="Monsters" instance=ExtResource( 4 )]
+position = Vector2( -1408, -960 )
+
+[node name="Monster2" parent="Monsters" instance=ExtResource( 4 )]
+position = Vector2( 192, -576 )
+
+[node name="Monster3" parent="Monsters" instance=ExtResource( 4 )]
+position = Vector2( 1984, -384 )
+
+[node name="Pickuppable-object" parent="." instance=ExtResource( 2 )]
+position = Vector2( 896, 128 )
+
+[node name="Pickuppable-object2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1088, 128 )
+
+[node name="Pickuppable-object3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1280, 128 )
+
+[node name="TileMap" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 58 )
+tile_data = PoolIntArray( -589838, 0, 1, -589837, 0, 196610, -589836, 0, 196610, -589835, 0, 196610, -589834, 0, 196610, -589833, 0, 196610, -589832, 0, 196610, -589831, 0, 196610, -589830, 0, 196610, -589829, 0, 196610, -589828, 0, 196610, -589827, 0, 196610, -589826, 0, 196610, -589825, 0, 196610, -655360, 0, 196610, -655359, 0, 196610, -655358, 0, 196610, -655357, 0, 196610, -655356, 0, 196610, -655355, 0, 196610, -655354, 0, 196610, -655353, 0, 196610, -655352, 0, 196610, -655351, 0, 196610, -655350, 0, 196610, -655349, 0, 196610, -655348, 0, 196610, -655347, 0, 196610, -655346, 0, 196610, -655345, 0, 196610, -655344, 0, 196610, -655343, 0, 3, -524302, 0, 65536, -589807, 0, 65536, -458766, 0, 65536, -458760, 0, 0, -524271, 0, 65536, -393230, 0, 65536, -393224, 0, 65536, -458735, 0, 65536, -327694, 0, 65536, -327688, 0, 65536, -393199, 0, 65536, -262158, 0, 65536, -262152, 0, 65536, -327663, 0, 65536, -196626, 0, 1, -196625, 0, 196610, -196624, 0, 196610, -196623, 0, 196610, -196622, 0, 131074, -196621, 0, 196610, -196620, 0, 196610, -196619, 0, 196610, -196618, 0, 196610, -196617, 0, 196610, -196616, 0, 131075, -262127, 0, 65536, -131090, 0, 65536, -196591, 0, 65536, -65554, 0, 65536, -131055, 0, 65536, -18, 0, 131073, -17, 0, 196610, -16, 0, 196610, -15, 0, 196610, -14, 0, 2, -13, 0, 196610, -12, 0, 196610, -11, 0, 196610, -10, 0, 196610, -9, 0, 196610, -8, 0, 3, -65519, 0, 65536, 65522, 0, 65536, 65528, 0, 65536, 17, 0, 65536, 131058, 0, 65536, 131064, 0, 65536, 65542, 0, 1, 65543, 0, 196610, 65544, 0, 196610, 65545, 0, 196610, 65546, 0, 3, 65553, 0, 65536, 196594, 0, 65536, 196600, 0, 65536, 131078, 0, 65536, 131082, 0, 65536, 131089, 0, 65536, 262130, 0, 65536, 262136, 0, 131072, 196614, 0, 65536, 196618, 0, 131073, 196619, 0, 196610, 196620, 0, 196610, 196621, 0, 196610, 196622, 0, 196610, 196623, 0, 196610, 196624, 0, 196610, 196625, 0, 131075, 327666, 0, 65536, 262150, 0, 65536, 393202, 0, 131073, 393203, 0, 196610, 393204, 0, 196610, 393205, 0, 196610, 393206, 0, 196610, 393207, 0, 196610, 393208, 0, 196610, 393209, 0, 196610, 393210, 0, 196610, 393211, 0, 196610, 393212, 0, 196610, 393213, 0, 196610, 393214, 0, 196610, 393215, 0, 196610, 327680, 0, 196610, 327681, 0, 196610, 327682, 0, 196610, 327683, 0, 196610, 327684, 0, 196610, 327685, 0, 196610, 327686, 0, 131075 )
