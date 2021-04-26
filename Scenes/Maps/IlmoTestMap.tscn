@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Nodes/Walls.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Images/floor_gray.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Nodes/Doors/DoorVertical.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Images/floor_brown.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Terrain.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Nodes/MessageTrigger.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -70,6 +71,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 1, 4, 5 ), PoolIntArra
 outlines = [ PoolVector2Array( -545.95, -683.838, -541.243, 5497.87, 2560.4, 5485.56, 2560.4, -671.524 ), PoolVector2Array( -4.4766, 4643.75, 2139.7, 4643.75, 2139.7, 2960.76, 1845.5, 2947.72, 1840.52, 12.2769, 0.510023, -0.769447 ), PoolVector2Array( 1980.14, 3352.16, 1985.12, 4448.05, 1147.4, 4461.1, 1147.4, 4095.8, 1032.71, 4108.85, 1032.71, 4421.96, 155.091, 4421.96, 155.091, 3352.16, 299.698, 3404.34, 304.684, 2856.39, 155.091, 2908.58, 170.05, 1108.17, 244.847, 1121.22, 459.265, 1421.29, 623.818, 1238.64, 703.602, 834.2, 643.764, 442.808, 977.858, 442.808, 982.844, 1029.9, 1172.33, 1029.9, 1142.41, 377.576, 1695.91, 403.669, 1695.91, 2947.72, 1551.3, 2934.67, 1556.29, 3365.2 ), PoolVector2Array( 494.17, 2960.76, 474.224, 3378.25, 982.844, 3378.25, 992.817, 3756.59, 1157.37, 3730.5, 1142.41, 3339.11, 1296.99, 3339.11, 1292, 2947.72, 1152.38, 2921.62, 1152.38, 1473.47, 977.858, 1512.61, 987.831, 2934.67 ) ]
 
 [node name="Terrain" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Walls" parent="." instance=ExtResource( 1 )]
 tile_set = SubResource( 4 )

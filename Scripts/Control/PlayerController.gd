@@ -12,20 +12,24 @@ func die():
 		get_parent().death_is_now()
 
 func set_fuel_ui():
-	get_parent().get_node("CanvasLayer/Fuel").set_texture($MoveController/PlayerBody/Inventory_node.lamp_oil+0.17)
+	get_parent().get_node("UIContainer/Fuel").set_texture($MoveController/PlayerBody/Inventory_node.lamp_oil+0.17)
 
 func change_game_state(new_state : int):
-	print("New state %s" % new_state)
 	if new_state > GameState.CONTROL_NULL or new_state < 0:
 		print("New state not possible! ({0})".format(new_state))
 		return
 
 	next_gamestate = new_state
 	if (next_gamestate == GameState.CONTROL_PAUSE):
-		get_parent().get_node("CanvasLayer/PauseScreen").fade_in()
+		get_parent().get_node("UIContainer/PauseScreen").fade_in()
 		get_parent().get_node("Terrain").toggle_pause()
 	if (current_gamestate == GameState.CONTROL_PAUSE):
-		get_parent().get_node("CanvasLayer/PauseScreen").fade_out()
+		get_parent().get_node("UIContainer/PauseScreen").fade_out()
+		get_parent().get_node("Terrain").toggle_pause()
+		
+	if (next_gamestate == GameState.CONTROL_CUTSCENE):
+		get_parent().get_node("Terrain").toggle_pause()
+	if (current_gamestate == GameState.CONTROL_CUTSCENE and next_gamestate == GameState.CONTROL_PLAYER):
 		get_parent().get_node("Terrain").toggle_pause()
 
 func get_gamestate():

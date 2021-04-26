@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Nodes/Walls.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Images/floor_gray.png" type="Texture" id=2]
@@ -8,9 +8,8 @@
 [ext_resource path="res://Scenes/Nodes/Doors/DoorVertical.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Images/floor_brown.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Nodes/Pickuppable-object.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Nodes/Objects/ObjectWithCollision.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Nodes/Objects/ObjectWithoutCollision.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/Terrain.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Nodes/Objects/EndBed.tscn" type="PackedScene" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -72,6 +71,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 1, 4, 5 ), PoolIntArra
 outlines = [ PoolVector2Array( -545.95, -683.838, -541.243, 5497.87, 2560.4, 5485.56, 2560.4, -671.524 ), PoolVector2Array( -4.4766, 4643.75, 2139.7, 4643.75, 2139.7, 2960.76, 1845.5, 2947.72, 1840.52, 12.2769, 0.510023, -0.769447 ), PoolVector2Array( 1690.86, 3380.33, 1695.85, 4424.05, 1147.4, 4461.1, 1147.4, 4095.8, 1032.71, 4108.85, 1032.71, 4421.96, 155.091, 4421.96, 155.091, 3352.16, 299.698, 3404.34, 304.684, 2856.39, 155.091, 2908.58, 170.05, 1108.17, 150.034, 418.786, 419.303, 405.739, 543.965, 405.739, 633.721, 444.879, 643.764, 442.808, 977.858, 442.808, 982.844, 1029.9, 1172.33, 1029.9, 1142.41, 377.576, 1695.91, 403.669, 1695.91, 2947.72, 1551.3, 2934.67, 1556.29, 3365.2 ), PoolVector2Array( 494.17, 2960.76, 474.224, 3378.25, 982.844, 3378.25, 992.817, 3756.59, 1157.37, 3730.5, 1142.41, 3339.11, 1296.99, 3339.11, 1292, 2947.72, 1152.38, 2921.62, 1152.38, 1473.47, 977.858, 1512.61, 987.831, 2934.67 ) ]
 
 [node name="Terrain" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="Walls" parent="." instance=ExtResource( 1 )]
 tile_set = SubResource( 4 )
@@ -81,12 +81,6 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 
 [node name="kartta1" type="Sprite" parent="."]
 position = Vector2( 907.324, 830.194 )
 texture = ExtResource( 3 )
-
-[node name="Lamp" parent="kartta1" instance=ExtResource( 4 )]
-position = Vector2( -487.705, -561.719 )
-
-[node name="Lamp2" parent="kartta1" instance=ExtResource( 4 )]
-position = Vector2( 794.917, 521.356 )
 
 [node name="DoorObject" parent="kartta1" instance=ExtResource( 5 )]
 position = Vector2( -566.922, 259.651 )
@@ -103,6 +97,7 @@ speed = 400
 light_slowdown = 0.1
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+visible = false
 scale = Vector2( 1, 1.00295 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
@@ -110,14 +105,13 @@ scale = Vector2( 0.900407, 0.343131 )
 z_index = 8
 navpoly = SubResource( 5 )
 
-[node name="Pickuppable-object" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1401.24, 1369.85 )
-z_index = 4
+[node name="Lamps" type="Node2D" parent="."]
 
-[node name="Pickuppable-object" parent="Pickuppable-object" instance=ExtResource( 9 )]
-position = Vector2( -749.805, -44.8987 )
-z_index = 4
+[node name="Lamp" parent="Lamps" instance=ExtResource( 4 )]
+position = Vector2( 1097.46, 938.753 )
 
-[node name="ObjectWithCollision" parent="." instance=ExtResource( 10 )]
+[node name="Lamp2" parent="Lamps" instance=ExtResource( 4 )]
+position = Vector2( 1629.17, 1384.31 )
 
-[node name="ObjectWithoutCollision" parent="." instance=ExtResource( 11 )]
+[node name="EndBed" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1290.36, 320.987 )

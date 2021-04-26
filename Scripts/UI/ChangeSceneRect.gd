@@ -1,48 +1,73 @@
 extends TextureRect
 
-var wait_time = 2.0
-var fade_timing = 1.0
-var cur_stage = 0
+export var INTRO_TEXT_1 = "INTRO TEXT 1"
+export var INTRO_TEXT_2 = "INTRO TEXT 2"
 
-var death_scene = preload("res://Grafiikka/UI/game_over.png")
-var switch_scene = preload("res://Grafiikka/UI/tumma_tausta.jpeg")
+export var GAME_TEXT_1 = "GAME TEXT 1"
+export var GAME_TEXT_2 = "GAME TEXT 2"
+export var GAME_TEXT_3 = "GAME TEXT 3"
+export var GAME_TEXT_4 = "GAME TEXT 4"
+
+export var OUTRO_TEXT_1 = "OUTRO TEXT 1"
+
+export var DEATH_TEXT = "DEATH TEXT"
+
+var fade_timing = 0.2
+var cur_state = 0
+
+var current_active = "None"
+
+var intro_scene = preload("res://Resources/Images/test.png")
+var wakeup_scene = preload("res://Grafiikka/UI/game_over.png")
+var scene_background = preload("res://Grafiikka/UI/tumma_tausta.jpeg")
+var end_screen = preload("res://Resources/Images/test.png")
 
 func _ready():
-	$Tween.connect("tween_all_completed", self, "next_stage")
-	$Timer.connect("timeout", self, "next_stage")
-	$Timer.wait_time = wait_time
+	$FadeOutTween.connect("tween_all_completed", self, "fade_out_completed")
+	$FadeInTween.connect("tween_all_completed", self, "fade_in_completed")
 
-func next_stage():
-	if cur_stage == 0:
-		$Timer.start()
-		get_parent().get_parent().destroy_current_map()
-		cur_stage += 1
-	elif cur_stage == 1:
-		fade_out_scene()
-		cur_stage += 1
-	else:
-		cur_stage = 0
+func fade_out_completed():
+	get_parent().get_parent().move_to_next_stage()
 
-func fade_to_scene(next_scene):
-	if next_scene == 69:
-		texture = death_scene
-	else:
-		texture = switch_scene
+func fade_in_completed():
+	get_parent().get_parent().destroy_current_map()
 
-	var screen_text = "Temp text stuff"
+func transition_to_stage(game_stage, stage_id = -1):
+	match game_stage:
+		"INTRO":
+			match stage_id:
+				1:
+					fade_in_image("intro")
+				2:
+					fade_in_text(INTRO_TEXT_1)
+				3:
+					fade_in_image("wakeup")
+				4:
+					fade_in_text(INTRO_TEXT_1)
+		"GAME":
+			match stage_id:
+				2:
+					fade_in_text(GAME_TEXT_1)
+				4:
+					fade_in_text(GAME_TEXT_2)
+				6:
+					fade_in_text(GAME_TEXT_3)
+				8:
+					fade_in_text(GAME_TEXT_4)
+		"OUTRO":
+			match stage_id:
+				1:
+					fade_in_text(OUTRO_TEXT_1)
+				2:
+					fade_in_image("end_screen")
+		"DEATH":
+			fade_in_text(DEATH_TEXT)
+
+func fade_in_text(text):
+	current_active = "text"
+	$SceneText.text = text
 	
-	$SceneText.text = screen_text
-	
-	$Tween.interpolate_property(
-		self,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 0.0),
-		Color(1.0, 1.0, 1.0, 1.0),
-		fade_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
-	$Tween.interpolate_property(
+	$FadeInTween.interpolate_property(
 		$SceneText,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 0.0),
@@ -52,10 +77,69 @@ func fade_to_scene(next_scene):
 		Tween.EASE_IN
 	)
 	
-	$Tween.start()
+	$FadeInTween.start()
 	
-func fade_out_scene():
-	$Tween.interpolate_property(
+func fade_in_image(state):
+	current_active = "image"
+	
+	if state == "intro":
+		$ScreenTexture.texture = intro_scene
+	elif state == "wakeup":
+		$ScreenTexture.texture = wakeup_scene
+	elif state == "end_screen":
+		$ScreenTexture.texture = end_screen
+		
+	$FadeInTween.interpolate_property(
+		$ScreenTexture,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 0.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		fade_timing,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	
+	$FadeInTween.start()
+
+func fade_out_active():
+	if current_active == "text":
+		$FadeOutTween.interpolate_property(
+			$SceneText,
+			"modulate",
+			Color(1.0, 1.0, 1.0, 1.0),
+			Color(1.0, 1.0, 1.0, 0.0),
+			fade_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
+		$FadeOutTween.start()
+	elif current_active == "image":
+		$FadeOutTween.interpolate_property(
+			$ScreenTexture,
+			"modulate",
+			Color(1.0, 1.0, 1.0, 1.0),
+			Color(1.0, 1.0, 1.0, 0.0),
+			fade_timing,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN
+		)
+		$FadeOutTween.start()
+
+func fade_in_background():
+	$BackgroundTween.interpolate_property(
+		self,
+		"modulate",
+		Color(1.0, 1.0, 1.0, 0.0),
+		Color(1.0, 1.0, 1.0, 1.0),
+		fade_timing,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN
+	)
+	
+	$BackgroundTween.start()
+	
+func fade_out_background():
+	$BackgroundTween.interpolate_property(
 		self,
 		"modulate",
 		Color(1.0, 1.0, 1.0, 1.0),
@@ -64,16 +148,6 @@ func fade_out_scene():
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN
 	)
-
-	$Tween.interpolate_property(
-		$SceneText,
-		"modulate",
-		Color(1.0, 1.0, 1.0, 1.0),
-		Color(1.0, 1.0, 1.0, 0.0),
-		fade_timing,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_IN
-	)
 	
-	$Tween.start()
-
+	$BackgroundTween.start()
+	

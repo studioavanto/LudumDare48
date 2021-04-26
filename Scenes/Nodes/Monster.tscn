@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Grafiikka/Hahmo/monsteri.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Ai/MonsterController.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -54,3 +55,9 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
 anims/idle = SubResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+texture_scale = 4.0
+color = Color( 1, 1, 1, 0.490196 )
+mode = 1

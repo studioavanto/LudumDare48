@@ -19,6 +19,7 @@ scale = Vector2( 0.990146, 1 )
 z_index = 5
 texture = ExtResource( 1 )
 texture_scale = 4.0
+mode = 3
 shadow_enabled = true
 
 [node name="LightHitBox" type="Area2D" parent="."]

@@ -12,8 +12,8 @@ func are_all_light_on():
 
 func toggle_pause():
 	if everything_paused:
-		print("Paused!")
+		print("Unpaused!")
 	else:
-		print("unpaused")
+		print("Paused")
 		
 	everything_paused = !everything_paused

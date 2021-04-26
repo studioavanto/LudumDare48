@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/UI/Fuel.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI/ChangeSceneRect.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/UI/PauseScreen.gd" type="Script" id=3]
+[ext_resource path="res://Grafiikka/UI/pause.png" type="Texture" id=4]
+[ext_resource path="res://Grafiikka/UI/tumma_tausta.jpeg" type="Texture" id=5]
+
+[node name="UIContainer" type="CanvasLayer"]
+
+[node name="Fuel" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeSceneRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundTween" type="Tween" parent="ChangeSceneRect"]
+
+[node name="Timer" type="Timer" parent="ChangeSceneRect"]
+one_shot = true
+
+[node name="SceneText" type="RichTextLabel" parent="ChangeSceneRect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScreenTexture" type="TextureRect" parent="ChangeSceneRect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeOutTween" type="Tween" parent="ChangeSceneRect"]
+
+[node name="FadeInTween" type="Tween" parent="ChangeSceneRect"]
+
+[node name="PauseScreen" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="PauseScreen"]
