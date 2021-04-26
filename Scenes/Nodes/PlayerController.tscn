@@ -101,7 +101,7 @@ shadow_filter_smooth = 30.0
 shadow_item_cull_mask = 0
 
 [node name="varjo" type="Sprite" parent="MoveController/PlayerBody"]
-scale = Vector2( 5, 5 )
+scale = Vector2( 6, 6 )
 z_index = 20
 texture = ExtResource( 17 )
 

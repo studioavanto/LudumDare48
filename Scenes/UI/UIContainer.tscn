@@ -28,8 +28,8 @@ __meta__ = {
 }
 
 [node name="ChangeSceneRect" type="TextureRect" parent="."]
-margin_right = 2195.0
-margin_bottom = 1199.0
+margin_right = 2295.0
+margin_bottom = 1284.0
 texture = ExtResource( 5 )
 expand = true
 script = ExtResource( 2 )
@@ -50,8 +50,9 @@ one_shot = true
 
 [node name="ScreenTexture" type="TextureRect" parent="ChangeSceneRect"]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 2234.0
+margin_bottom = 1271.0
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -66,10 +67,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -346.357
-margin_top = -176.003
-margin_right = 819.643
-margin_bottom = 1024.0
+margin_left = -421.108
+margin_top = -210.709
+margin_right = 744.892
+margin_bottom = 989.294
 custom_fonts/normal_font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -77,9 +78,10 @@ __meta__ = {
 
 [node name="PauseScreen" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = -3.1748
-margin_right = 1920.0
-margin_bottom = 1076.83
+margin_left = 117.466
+margin_top = 82.255
+margin_right = 2037.47
+margin_bottom = 1162.26
 texture = ExtResource( 4 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -97,20 +99,20 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="PauseInfo"]
-margin_left = 85.2534
-margin_top = 873.673
-margin_right = 405.253
-margin_bottom = 959.673
+margin_left = 95.9321
+margin_top = 972.451
+margin_right = 415.932
+margin_bottom = 1058.45
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect2" type="TextureRect" parent="PauseInfo"]
-margin_left = 83.6738
-margin_top = 922.149
-margin_right = 528.975
-margin_bottom = 1013.8
+margin_left = 94.3525
+margin_top = 1020.93
+margin_right = 539.654
+margin_bottom = 1112.58
 texture = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false

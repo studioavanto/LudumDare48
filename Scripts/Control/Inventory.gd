@@ -18,7 +18,7 @@ func intense_burn():
 	elif(lamp_is_on):
 		lamp_oil = 0.0
 	
-	get_tree().root.get_node("Game/GeneralSoundEffectsSC").play_sound("intense_burn")
+	get_tree().root.get_node("Game/GeneralSoundEffectsSC").play_sound("intense_burn", 3.0)
 	
 func toggle_lamp():
 	if(lamp_is_on):
