@@ -45,7 +45,7 @@ margin_left = -209.507
 margin_top = -196.969
 margin_right = 157.493
 margin_bottom = 0.0307617
-text = "Turn light off with Space"
+text = "Turn light on with Space"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger"]
 shape = SubResource( 3 )

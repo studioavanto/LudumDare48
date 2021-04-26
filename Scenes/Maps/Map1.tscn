@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/Nodes/Pickuppable-object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Nodes/Collisions.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Nodes/Lamp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Nodes/Doors/DoorHorizontal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Grafiikka/Kartta/Ovet/ovipalikka_vihreä.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Nodes/Objects/salonkipoyta_pullot.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Grafiikka/Kartta/kartta0_pohja.png" type="Texture" id=9]
 [ext_resource path="res://Grafiikka/Kartta/Ovet/ovipalikka_harmaa.png" type="Texture" id=10]
@@ -14,11 +15,29 @@
 [ext_resource path="res://Scenes/Nodes/Objects/EndBed.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scripts/Objects/Lamps.gd" type="Script" id=14]
 [ext_resource path="res://Scripts/Ai/Monsters.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Nodes/Objects/jakkara2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Nodes/Objects/tyopoyta.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Nodes/Objects/poyta.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Nodes/Objects/nojatuoli.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Nodes/Objects/nojatuoli2.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Nodes/Objects/salonkipoyta.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Nodes/Objects/kaappi2.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Grafiikka/Kartta/Huonekalut/matto2.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Nodes/Objects/jakkara.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Nodes/Objects/kellokaappi.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Nodes/MessageTrigger.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Nodes/Message.tscn" type="PackedScene" id=27]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 3482.87, -1487.75, 3513.55, 6370.75, 3340.71, 2789.54, 3340.71, 1301.78, 907.093, 5342.05, 913.023, 2689, 1492.66, 2789.54, 1492.66, 4649.23, 2893.62, 4550.79, 2893.62, 2720.03, -1522.08, 6468.49, 2887.69, 1308.17, 2887.69, -507.081, -1499.67, -1585.12, 1492.66, -557.907, 1492.66, 1301.78, -1066.18, 1301.78, -1079.44, 5342.05, 1612.76, 4287.03, 1600.9, 2859.66, 1701.71, 2890.69, 2727.58, 4287.03, 1705.9, 1301.78, 1606.83, 1323.68, 1606.83, -103.692, 2733.51, -103.692, -954.908, 5031.75, -960.838, 2813.12, -806.659, 2828.63, 781.869, 5021.17, 2727.58, 2875.18, 1921.11, 2875.18, 1921.11, 2425.24, 1701.71, 2440.76, 1705.9, 1673.72, 2733.51, 1323.68, 1990.21, 1301.78, 1990.21, 1673.72, 2869.9, 1696.04, 2875.83, 2425.24, -954.908, 1696.04, 426.474, 2417.6, -966.768, 2409.73, 142.158, 2417.6, 426.474, 2789.54, 142.158, 2789.54, -545.742, 2425.24, -800.729, 2440.76, -545.742, 2828.63, 781.869, 2789.54 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 2, 1 ), PoolIntArray( 8, 1, 10, 4 ), PoolIntArray( 3, 11, 12, 0 ), PoolIntArray( 13, 0, 12, 14 ), PoolIntArray( 14, 15, 16, 13 ), PoolIntArray( 10, 13, 16, 17 ), PoolIntArray( 10, 17, 4 ), PoolIntArray( 8, 4, 7 ), PoolIntArray( 18, 19, 20, 21 ), PoolIntArray( 22, 23, 24, 25 ), PoolIntArray( 26, 27, 28, 29 ), PoolIntArray( 30, 21, 20, 31 ), PoolIntArray( 32, 31, 20, 33, 34 ), PoolIntArray( 25, 35, 36 ), PoolIntArray( 22, 25, 36, 34 ), PoolIntArray( 37, 38, 39, 32, 34 ), PoolIntArray( 34, 36, 37 ), PoolIntArray( 40, 34, 33, 41 ), PoolIntArray( 42, 40, 41, 43 ), PoolIntArray( 41, 44, 45, 43 ), PoolIntArray( 42, 43, 46 ), PoolIntArray( 47, 42, 46 ), PoolIntArray( 47, 46, 48, 28 ), PoolIntArray( 29, 28, 48 ), PoolIntArray( 49, 29, 48, 44 ), PoolIntArray( 44, 48, 45 ) ]
 outlines = [ PoolVector2Array( -1499.67, -1585.12, 3482.87, -1487.75, 3513.55, 6370.75, -1522.08, 6468.49 ), PoolVector2Array( -1066.18, 1301.78, -1079.44, 5342.05, 907.093, 5342.05, 913.023, 2689, 1492.66, 2789.54, 1492.66, 4649.23, 2893.62, 4550.79, 2893.62, 2720.03, 3340.71, 2789.54, 3340.71, 1301.78, 2887.69, 1308.17, 2887.69, -507.081, 1492.66, -557.907, 1492.66, 1301.78 ), PoolVector2Array( -960.838, 2813.12, -954.908, 5031.75, 781.869, 5021.17, 781.869, 2789.54, 426.474, 2789.54, 426.474, 2417.6, 1701.71, 2440.76, 1701.71, 2890.69, 1600.9, 2859.66, 1612.76, 4287.03, 2727.58, 4287.03, 2727.58, 2875.18, 1921.11, 2875.18, 1921.11, 2425.24, 2875.83, 2425.24, 2869.9, 1696.04, 1990.21, 1673.72, 1990.21, 1301.78, 2733.51, 1323.68, 2733.51, -103.692, 1606.83, -103.692, 1606.83, 1323.68, 1705.9, 1301.78, 1705.9, 1673.72, -954.908, 1696.04, -966.768, 2409.73, -800.729, 2440.76, -806.659, 2828.63 ), PoolVector2Array( -545.742, 2425.24, -545.742, 2828.63, 142.158, 2789.54, 142.158, 2417.6 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 100, 130 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 300, 300 )
 
 [node name="Terrain" type="Node2D"]
 script = ExtResource( 12 )
@@ -28,7 +47,7 @@ light_mask = 3
 texture = ExtResource( 9 )
 
 [node name="StartLocation" type="Node2D" parent="."]
-position = Vector2( 704, 448 )
+position = Vector2( 1280, 576 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 scale = Vector2( 1, 1.00295 )
@@ -48,31 +67,30 @@ position = Vector2( -640, 64 )
 texture = ExtResource( 11 )
 
 [node name="EndBed" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1664, -128 )
-rotation = 1.5708
+position = Vector2( 1419.21, 457.436 )
+rotation = -0.00796305
 
 [node name="Lamps" type="Node2D" parent="."]
 script = ExtResource( 14 )
 
 [node name="Lamp" parent="Lamps" instance=ExtResource( 4 )]
-position = Vector2( -1664, 320 )
+position = Vector2( -1689.39, 308.462 )
 
 [node name="Lamp2" parent="Lamps" instance=ExtResource( 4 )]
-position = Vector2( -1600, 640 )
+position = Vector2( -1694.49, 661.479 )
 
-[node name="Pickuppable-object" parent="Lamps/Lamp2" instance=ExtResource( 1 )]
-position = Vector2( 3072, -1472 )
+[node name="Lamp3" parent="Lamps" instance=ExtResource( 4 )]
+position = Vector2( 889.788, 206.924 )
 
 [node name="Monsters" type="Node" parent="."]
 script = ExtResource( 15 )
 
 [node name="Monster" parent="Monsters" instance=ExtResource( 8 )]
-position = Vector2( 704, -704 )
+position = Vector2( -1126.2, -124 )
 speed = 300
 light_slowdown = 0.1
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
-visible = true
 tile_data = PoolIntArray( -524285, 0, 1, -524284, 0, 196610, -524283, 0, 196610, -524282, 0, 196610, -524281, 0, 196610, -524280, 0, 196610, -524279, 0, 196610, -524278, 0, 196610, -524277, 0, 196610, -524276, 0, 3, -458749, 0, 65536, -458740, 0, 65536, -393213, 0, 65536, -393204, 0, 65536, -327677, 0, 65536, -327668, 0, 65536, -262141, 0, 65536, -262132, 0, 65536, -131087, 0, 1, -131086, 0, 196610, -131085, 0, 196610, -131084, 0, 196610, -131083, 0, 196610, -131082, 0, 196610, -131081, 0, 196610, -131080, 0, 196610, -131079, 0, 196610, -131078, 0, 196610, -131077, 0, 196610, -131076, 0, 196610, -131075, 0, 196610, -131074, 0, 196610, -131073, 0, 196610, -196608, 0, 196610, -196607, 0, 196610, -196606, 0, 196610, -196605, 0, 131075, -196601, 0, 196609, -196600, 0, 196610, -196599, 0, 196610, -196598, 0, 196610, -196597, 0, 196610, -196596, 0, 131074, -196595, 0, 196610, -196594, 0, 196610, -196593, 0, 3, -65551, 0, 65536, -131057, 0, 65536, -15, 0, 65536, -65521, 0, 65536, 65521, 0, 65536, 65526, 0, 196609, 65527, 0, 196610, 65528, 0, 196611, 65533, 0, 196609, 65534, 0, 2, 65535, 0, 196610, 0, 0, 196610, 1, 0, 196610, 2, 0, 196610, 3, 0, 3, 7, 0, 196609, 8, 0, 196610, 9, 0, 196610, 10, 0, 196610, 11, 0, 196610, 12, 0, 2, 13, 0, 196610, 14, 0, 196610, 15, 0, 131075, 131057, 0, 65536, 131070, 0, 65536, 65539, 0, 65536, 65548, 0, 65536, 196593, 0, 65536, 196606, 0, 65536, 131075, 0, 65536, 131084, 0, 65536, 262129, 0, 65536, 262142, 0, 65536, 196611, 0, 65536, 196620, 0, 65536, 327665, 0, 65536, 327678, 0, 65536, 262147, 0, 65536, 262156, 0, 65536, 393201, 0, 65536, 393214, 0, 65536, 327683, 0, 131073, 327684, 0, 196610, 327685, 0, 196610, 327686, 0, 196610, 327687, 0, 196610, 327688, 0, 196610, 327689, 0, 196610, 327690, 0, 196610, 327691, 0, 196610, 327692, 0, 131075, 458737, 0, 65536, 458750, 0, 65536, 524273, 0, 131073, 524274, 0, 196610, 524275, 0, 196610, 524276, 0, 196610, 524277, 0, 196610, 524278, 0, 196610, 524279, 0, 196610, 524280, 0, 196610, 524281, 0, 196610, 524282, 0, 196610, 524283, 0, 196610, 524284, 0, 196610, 524285, 0, 196610, 524286, 0, 131075 )
 
 [node name="DoorObject2" parent="." instance=ExtResource( 5 )]
@@ -82,3 +100,86 @@ texture = ExtResource( 10 )
 [node name="DoorObject" parent="." instance=ExtResource( 5 )]
 position = Vector2( 716.834, 88.4847 )
 texture = ExtResource( 6 )
+
+[node name="Pickuppable-object" parent="." instance=ExtResource( 1 )]
+position = Vector2( 704.236, -567.099 )
+
+[node name="ObjectWithCollision2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 976.971, 533.574 )
+
+[node name="ObjectWithCollision3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 640, 448 )
+rotation = 1.58296
+
+[node name="ObjectWithCollision4" parent="." instance=ExtResource( 18 )]
+position = Vector2( 892.617, 212.581 )
+
+[node name="ObjectWithCollision5" parent="." instance=ExtResource( 19 )]
+position = Vector2( -379.029, 764.708 )
+
+[node name="ObjectWithCollision6" parent="." instance=ExtResource( 18 )]
+position = Vector2( -1692.84, 663.256 )
+
+[node name="ObjectWithCollision7" parent="." instance=ExtResource( 18 )]
+position = Vector2( -1692.23, 309.651 )
+
+[node name="ObjectWithCollision8" parent="." instance=ExtResource( 20 )]
+position = Vector2( -730.17, 801.035 )
+
+[node name="ObjectWithCollision9" parent="." instance=ExtResource( 21 )]
+position = Vector2( -1590.56, 815.378 )
+
+[node name="ObjectWithCollision10" parent="." instance=ExtResource( 22 )]
+position = Vector2( 1164.47, -828.448 )
+rotation = -1.5708
+
+[node name="ObjectWithCollision12" parent="." instance=ExtResource( 22 )]
+position = Vector2( 1519.25, -505.243 )
+rotation = 0.0127105
+
+[node name="ObjectWithCollision11" parent="." instance=ExtResource( 16 )]
+position = Vector2( -583.782, 583.195 )
+
+[node name="matto2" type="Sprite" parent="."]
+position = Vector2( -1087.91, 478.092 )
+rotation = 0.00421369
+texture = ExtResource( 23 )
+
+[node name="ObjectWithCollision13" parent="." instance=ExtResource( 24 )]
+position = Vector2( -734.69, 496.542 )
+
+[node name="ObjectWithCollision14" parent="." instance=ExtResource( 24 )]
+position = Vector2( -821.122, 617.801 )
+
+[node name="ObjectWithCollision" parent="." instance=ExtResource( 25 )]
+position = Vector2( 657.074, -870.238 )
+
+[node name="ObjectWithCollision15" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1083.58, -441.437 )
+
+[node name="MessageTrigger" parent="." instance=ExtResource( 26 )]
+position = Vector2( 50.5215, -128.931 )
+
+[node name="Message" parent="MessageTrigger" instance=ExtResource( 27 )]
+margin_left = -200.226
+margin_top = -301.674
+margin_right = 299.774
+margin_bottom = -101.674
+text = "Beware what lurks in the dark."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger"]
+shape = SubResource( 2 )
+
+[node name="MessageTrigger2" parent="." instance=ExtResource( 26 )]
+position = Vector2( 653.077, -453.378 )
+
+[node name="Message" parent="MessageTrigger2" instance=ExtResource( 27 )]
+margin_left = -142.255
+margin_top = -416.777
+margin_right = 357.745
+margin_bottom = -116.777
+text = "I can't let my light go out."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger2"]
+position = Vector2( 110.999, -218.633 )
+shape = SubResource( 3 )

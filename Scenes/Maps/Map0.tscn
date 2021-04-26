@@ -22,11 +22,11 @@ vertices = PoolVector2Array( 2560.4, -671.524, 2560.4, 5485.56, 2139.7, 4643.75,
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 1, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 7, 6, 0, 8 ), PoolIntArray( 8, 0, 3, 9 ), PoolIntArray( 10, 11, 12, 13, 14, 15 ), PoolIntArray( 16, 17, 18, 19, 20, 21, 22, 23 ), PoolIntArray( 24, 25, 26, 27, 28 ), PoolIntArray( 25, 24, 29 ), PoolIntArray( 30, 31, 32, 33, 25 ), PoolIntArray( 30, 25, 29, 34, 35 ), PoolIntArray( 36, 37, 38, 27, 26 ), PoolIntArray( 16, 30, 35, 17 ), PoolIntArray( 28, 39, 24 ), PoolIntArray( 15, 28, 27, 10 ), PoolIntArray( 40, 15, 14, 41 ), PoolIntArray( 41, 14, 18, 42 ), PoolIntArray( 43, 44, 16, 23 ), PoolIntArray( 20, 45, 21 ), PoolIntArray( 17, 46, 42, 18 ) ]
 outlines = [ PoolVector2Array( -545.95, -683.838, -541.243, 5497.87, 2560.4, 5485.56, 2560.4, -671.524 ), PoolVector2Array( -4.4766, 4643.75, 2139.7, 4643.75, 2139.7, 2960.76, 1845.5, 2947.72, 1840.52, 12.2769, 0.510023, -0.769447 ), PoolVector2Array( 1690.86, 3380.33, 1695.85, 4424.05, 1147.4, 4461.1, 1147.4, 4095.8, 1032.71, 4108.85, 1032.71, 4421.96, 155.091, 4421.96, 155.091, 3352.16, 299.698, 3404.34, 304.684, 2856.39, 155.091, 2908.58, 170.05, 1108.17, 150.034, 418.786, 419.303, 405.739, 543.965, 405.739, 633.721, 444.879, 643.764, 442.808, 977.858, 442.808, 982.844, 1029.9, 1172.33, 1029.9, 1142.41, 377.576, 1695.91, 403.669, 1695.91, 2947.72, 1551.3, 2934.67, 1556.29, 3365.2 ), PoolVector2Array( 494.17, 2960.76, 474.224, 3378.25, 982.844, 3378.25, 992.817, 3756.59, 1157.37, 3730.5, 1142.41, 3339.11, 1296.99, 3339.11, 1292, 2947.72, 1152.38, 2921.62, 1152.38, 1473.47, 977.858, 1512.61, 987.831, 2934.67 ) ]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 134.686
 height = 56.5623
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = ExtResource( 15 )
 
@@ -103,14 +103,14 @@ message = "I should turn the light on"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger2"]
 position = Vector2( 12.0289, -162.427 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Message" parent="MessageTrigger2" instance=ExtResource( 13 )]
 margin_left = -87.315
 margin_top = -252.512
 margin_right = 199.685
 margin_bottom = -58.512
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Why is the light off?!"
 
 [node name="ovipalikka_vihreä" type="Sprite" parent="."]
