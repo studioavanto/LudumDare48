@@ -62,8 +62,6 @@ zoom = Vector2( 1.3, 1.3 )
 
 [node name="Inventory_node" type="Node" parent="MoveController/PlayerBody"]
 script = ExtResource( 5 )
-intense_burn_cost = 0.2
-fill_amount = 0.5
 
 [node name="InteractArea" type="Area2D" parent="MoveController/PlayerBody"]
 position = Vector2( -0.471954, -0.943878 )
