@@ -5,8 +5,8 @@ extends Sprite
 # var a = 2
 # var b = "text"
 
-var door_closed_sprite = preload("res://Grafiikka/Kartta/Ovet/ovikiinni_pysty_vasen.png")
-var door_open_sprite = preload("res://Grafiikka/Kartta/Ovet/oviauki_pysty_2.png")
+var door_closed_sprite = preload("res://Grafiikka/Kartta/Ovet/tuplaovi_kiinni.png")
+var door_open_sprite = preload("res://Grafiikka/Kartta/Ovet/tuplaovi_auki.png")
 
 var door_open = false
 
