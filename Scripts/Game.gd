@@ -1,6 +1,7 @@
 extends Node2D
 
 var game_stage = "INTRO"
+export var start_stage = 0
 var current_stage = 0
 var scene_transition = false
 export var test = false
@@ -16,6 +17,7 @@ var maps = [
 var test_map = "res://Scenes/Maps/IlmoTestMap.tscn"
 
 func _ready():
+	current_stage = start_stage
 	if test:
 		add_child(load(test_map).instance())
 		$UIContainer/ChangeSceneRect.modulate = Color(1.0, 1.0, 1.0, 0.0)
@@ -38,7 +40,9 @@ func end_scene_if_possible():
 
 func death_is_now():
 	current_stage -= 1
-	$UIContainer/ChangeSceneRect.transition_to_stage("death")
+	$PlayerController.change_game_state(2)
+	$UIContainer/ChangeSceneRect.fade_in_background()
+	$UIContainer/ChangeSceneRect.transition_to_stage("DEATH")
 
 func destroy_current_map():
 	if game_stage == "GAME":

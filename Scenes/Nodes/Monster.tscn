@@ -60,4 +60,5 @@ anims/idle = SubResource( 3 )
 texture = ExtResource( 3 )
 texture_scale = 4.0
 color = Color( 1, 1, 1, 0.490196 )
+energy = 0.1
 mode = 1

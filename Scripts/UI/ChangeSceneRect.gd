@@ -43,7 +43,7 @@ func transition_to_stage(game_stage, stage_id = -1):
 				3:
 					fade_in_image("wakeup")
 				4:
-					fade_in_text(INTRO_TEXT_1)
+					fade_in_text(INTRO_TEXT_2)
 		"GAME":
 			match stage_id:
 				2:

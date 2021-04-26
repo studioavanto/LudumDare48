@@ -7,6 +7,7 @@
 radius = 200.0
 
 [node name="LightSource" type="Node2D"]
+position = Vector2( 12.5991, -2.51984 )
 z_index = 5
 script = ExtResource( 2 )
 __meta__ = {
@@ -19,8 +20,11 @@ scale = Vector2( 0.990146, 1 )
 z_index = 5
 texture = ExtResource( 1 )
 texture_scale = 4.0
-mode = 3
+energy = 1.2
 shadow_enabled = true
+shadow_gradient_length = 1.0
+shadow_filter = 3
+shadow_filter_smooth = 11.1
 
 [node name="LightHitBox" type="Area2D" parent="."]
 

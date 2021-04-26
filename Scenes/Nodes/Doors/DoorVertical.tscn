@@ -10,22 +10,22 @@ radius = 71.413
 height = 71.8155
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 137.267, 14.7021 )
+extents = Vector2( 143.156, 15 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 144.994, -19.1526, 184.681, -20.4125, 185.311, 46.3633, 143.734, 46.3633 )
+polygon = PoolVector2Array( 139.752, -98.136, 187.752, -98.136, 187.752, 45.864, 139.752, 45.864 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
-polygon = PoolVector2Array( 147.8, 39.4281, 191.69, 39.2796, 192.32, -23.0865, 148.852, -23.7165 )
+polygon = PoolVector2Array( 147.391, 85.7614, 195.391, 85.7614, 195.391, -18.2386, 147.391, -18.2386 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
-polygon = PoolVector2Array( 66.4478, -24.2693, 106.135, -24.8993, 106.135, 92.9034, 64.5579, 92.2734 )
+polygon = PoolVector2Array( 64, -24, 112, -24, 112, 96, 64, 96 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 132.384, 4.64764 )
+extents = Vector2( 143.156, 7.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 138.605, 4.3451 )
+extents = Vector2( 143.156, 12 )
 
 [node name="DoorObjectHorizontal" type="Sprite"]
 z_index = 6
@@ -56,7 +56,7 @@ position = Vector2( -85.167, 27.8498 )
 scale = Vector2( 0.502947, 5.33333 )
 
 [node name="ovi" type="CollisionShape2D" parent="OviSB"]
-position = Vector2( 168.875, -9.56026 )
+position = Vector2( 169.336, -8.22184 )
 shape = SubResource( 2 )
 
 [node name="oikea_reauna_varjo" type="LightOccluder2D" parent="."]
@@ -68,18 +68,18 @@ position = Vector2( -171.391, 58.2386 )
 occluder = SubResource( 4 )
 
 [node name="ovi_varjo" type="LightOccluder2D" parent="."]
-position = Vector2( -85.2063, -55.8614 )
+position = Vector2( -88, -56 )
 occluder = SubResource( 5 )
 
 [node name="ReunatSB" type="StaticBody2D" parent="."]
 position = Vector2( -84.8527, 26.5165 )
 
 [node name="oikea_reuna" type="CollisionShape2D" parent="ReunatSB"]
-position = Vector2( 85.1866, 46.6521 )
+position = Vector2( 84.8527, 77.4835 )
 scale = Vector2( 0.502947, 5.33333 )
 shape = SubResource( 6 )
 
 [node name="vasen_reuna" type="CollisionShape2D" parent="ReunatSB"]
-position = Vector2( 87.7272, -147.729 )
+position = Vector2( 84.8527, -186.517 )
 scale = Vector2( 0.502947, 5.33333 )
 shape = SubResource( 7 )
