@@ -10,10 +10,7 @@ func are_all_light_on():
 
 	return lamps_lit == $Lamps.get_child_count()
 
-func toggle_pause():
-	if everything_paused:
-		print("Unpaused!")
-	else:
-		print("Paused")
+func toggle_pause(val):
+	$Monsters.pause_monsters(val)
 		
-	everything_paused = !everything_paused
+	everything_paused = val

@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 # Declare member variables here. Examples:
 var state = "Waiting"
+var pause = false
 # var b = "text"
 export var speed = 300
 export var attack_dist = 100
@@ -29,6 +30,9 @@ func destroy_monster():
 func go_hunting():
 	state = "Hunting"
 
+func pause_monster(pause_m):
+	pause = pause_m
+
 func in_line_of_sight():
 	var in_los = 0
 	if(global_position.distance_to(target.global_position) < see_dist):
@@ -41,6 +45,9 @@ func in_attack_distance():
 	return(in_range)
 
 func _physics_process(delta):
+	if pause:
+		return
+
 	if (state == "Dying"):
 		return
 	if(state == "Fleeing"):
