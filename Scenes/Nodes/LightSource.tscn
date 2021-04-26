@@ -21,7 +21,6 @@ z_index = 5
 texture = ExtResource( 1 )
 texture_scale = 4.0
 energy = 1.2
-mode = 3
 shadow_enabled = true
 shadow_gradient_length = 1.0
 shadow_filter = 3

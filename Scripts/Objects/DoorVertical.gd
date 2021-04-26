@@ -19,7 +19,7 @@ func interact_object():
 
 func open_door():
 	$DoorOikea.texture = door_open_sprite
-	$DoorOikea.position -= Vector2(-20, 50)
+	$DoorOikea.position -= Vector2(-20, 80)
 	$DoorVasen.texture = null
 	$ovi_varjo.light_mask = 4
 	$OviSB/ovi.disabled = true
@@ -27,7 +27,7 @@ func open_door():
 
 func close_door():
 	$DoorOikea.texture = door_closed_right_sprite
-	$DoorOikea.position += Vector2(-20, 50)
+	$DoorOikea.position += Vector2(-20, 80)
 	$DoorVasen.texture = door_closed_left_sprite
 	$ovi_varjo.light_mask = 1
 	$OviSB/ovi.disabled = false

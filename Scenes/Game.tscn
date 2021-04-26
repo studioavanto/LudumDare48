@@ -15,4 +15,4 @@ script = ExtResource( 2 )
 [node name="UIContainer" parent="." instance=ExtResource( 4 )]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.27451, 0.27451, 0.27451, 1 )
+color = Color( 0.521569, 0.376471, 0.215686, 1 )

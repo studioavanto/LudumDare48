@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Control/MoveController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Control/PlayerController.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Grafiikka/Hahmo/Main character - walk cycle08.png" type="Texture" id=14]
 [ext_resource path="res://Grafiikka/Hahmo/Main character - walk cycle02.png" type="Texture" id=15]
 [ext_resource path="res://Resources/Images/light_source.png" type="Texture" id=16]
+[ext_resource path="res://Grafiikka/varjo.png" type="Texture" id=17]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -43,7 +44,6 @@ polygon = PoolVector2Array( -20.2262, -7.09956, -9.84358, 3.28304, 12.8093, 7.05
 script = ExtResource( 2 )
 
 [node name="MoveController" type="Node2D" parent="."]
-position = Vector2( 29.8851, 45.4591 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -85,13 +85,24 @@ position = Vector2( 38.468, -35 )
 occluder = SubResource( 4 )
 
 [node name="Light2D" type="Light2D" parent="MoveController/PlayerBody"]
+light_mask = 0
+z_index = 10
 texture = ExtResource( 16 )
 texture_scale = 10.0
+color = Color( 1, 0.670588, 0.317647, 1 )
 energy = 0.5
 mode = 3
+range_item_cull_mask = 0
+shadow_color = Color( 0.741176, 0.352941, 0.352941, 0.145098 )
 shadow_gradient_length = 1.1
 shadow_filter = 3
 shadow_filter_smooth = 30.0
+shadow_item_cull_mask = 0
+
+[node name="varjo" type="Sprite" parent="MoveController/PlayerBody"]
+scale = Vector2( 5, 5 )
+z_index = 20
+texture = ExtResource( 17 )
 
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource( 3 )

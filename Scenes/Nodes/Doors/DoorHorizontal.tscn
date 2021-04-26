@@ -12,27 +12,29 @@ height = 103.069
 extents = Vector2( 127.25, 9 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 128, 0, 192, 0, 192, 48, 128, 48 )
+polygon = PoolVector2Array( 128, 0, 256, 0, 256, 48, 128, 48 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
-polygon = PoolVector2Array( 145.74, 34.5581, 193.74, 34.5581, 193.74, -13.4419, 145.74, -13.4419 )
+polygon = PoolVector2Array( 48, 32, 192, 32, 192, -16, 48, -16 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 16.6101, -9.90637, 128.61, -9.90637, 128.61, 38.0936, 16.6101, 38.0936 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 63.625, 9 )
+extents = Vector2( 127.25, 9 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 63.625, 9.00001 )
+extents = Vector2( 127.25, 9.00001 )
 
 [node name="DoorObjectHorizontal2" type="Sprite"]
+light_mask = 3
 position = Vector2( -0.353546, 0 )
 z_index = 6
 texture = ExtResource( 3 )
 script = ExtResource( 1 )
 
 [node name="Door" type="Sprite" parent="."]
+light_mask = 3
 position = Vector2( -84.8527, 26.5165 )
 z_index = 4
 texture = ExtResource( 2 )
@@ -44,6 +46,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
+light_mask = 3
 position = Vector2( -8.3182, 11.6161 )
 shape = SubResource( 1 )
 
@@ -52,30 +55,39 @@ position = Vector2( -85.167, 27.8498 )
 scale = Vector2( 0.502947, 5.33333 )
 
 [node name="ovi" type="CollisionShape2D" parent="OviSB"]
+light_mask = 3
 position = Vector2( 138.226, -2.22184 )
 shape = SubResource( 2 )
 
 [node name="oikea_reauna_varjo" type="LightOccluder2D" parent="."]
+light_mask = 3
 position = Vector2( -79.6465, -64 )
 occluder = SubResource( 3 )
+light_mask = 3
 
 [node name="vasen_reuna_varjo" type="LightOccluder2D" parent="."]
-position = Vector2( -257.387, -50.5581 )
+light_mask = 3
+position = Vector2( -255.646, -48 )
 occluder = SubResource( 4 )
+light_mask = 3
 
 [node name="ovi_varjo" type="LightOccluder2D" parent="."]
+light_mask = 3
 position = Vector2( -80.2565, -54.0936 )
 occluder = SubResource( 5 )
+light_mask = 3
 
 [node name="ReunatSB" type="StaticBody2D" parent="."]
 position = Vector2( -84.8527, 26.5165 )
 
 [node name="oikea_reuna" type="CollisionShape2D" parent="ReunatSB"]
-position = Vector2( -26.7938, -10.5165 )
+light_mask = 3
+position = Vector2( -58.7938, -10.5165 )
 scale = Vector2( 0.502947, 5.33333 )
 shape = SubResource( 6 )
 
 [node name="vasen_reuna" type="CollisionShape2D" parent="ReunatSB"]
-position = Vector2( 165.206, -10.5165 )
+light_mask = 3
+position = Vector2( 197.206, -10.5165 )
 scale = Vector2( 0.502947, 5.33333 )
 shape = SubResource( 7 )

@@ -13,19 +13,19 @@ height = 71.8155
 extents = Vector2( 143.156, 15 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 139.752, -26.136, 187.752, -26.136, 187.752, 45.864, 139.752, 45.864 )
+polygon = PoolVector2Array( 139.752, -98.136, 187.752, -98.136, 187.752, 45.864, 139.752, 45.864 )
 
 [sub_resource type="OccluderPolygon2D" id=4]
-polygon = PoolVector2Array( 147.391, 37.7614, 195.391, 37.7614, 195.391, -18.2386, 147.391, -18.2386 )
+polygon = PoolVector2Array( 147.391, 85.7614, 195.391, 85.7614, 195.391, -18.2386, 147.391, -18.2386 )
 
 [sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 64, -24, 112, -24, 112, 96, 64, 96 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 143.156, 4.64764 )
+extents = Vector2( 143.156, 7.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 143.156, 6 )
+extents = Vector2( 143.156, 12 )
 
 [node name="DoorObjectHorizontal" type="Sprite"]
 z_index = 6
@@ -75,11 +75,11 @@ occluder = SubResource( 5 )
 position = Vector2( -84.8527, 26.5165 )
 
 [node name="oikea_reuna" type="CollisionShape2D" parent="ReunatSB"]
-position = Vector2( 84.8527, 45.4835 )
+position = Vector2( 84.8527, 77.4835 )
 scale = Vector2( 0.502947, 5.33333 )
 shape = SubResource( 6 )
 
 [node name="vasen_reuna" type="CollisionShape2D" parent="ReunatSB"]
-position = Vector2( 84.8527, -146.517 )
+position = Vector2( 84.8527, -186.517 )
 scale = Vector2( 0.502947, 5.33333 )
 shape = SubResource( 7 )
