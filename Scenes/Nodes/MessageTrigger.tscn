@@ -1,32 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/Nodes/Message.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/UI/MessageTrigger.gd" type="Script" id=2]
-[ext_resource path="res://Grafiikka/UI/Fontti/CourierPrime-Bold.ttf" type="DynamicFontData" id=3]
-
-[sub_resource type="DynamicFont" id=2]
-size = 30
-font_data = ExtResource( 3 )
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 100.0
 
 [node name="MessageTrigger" type="Area2D"]
 z_index = 10
 collision_mask = 4
 script = ExtResource( 2 )
-
-[node name="Message" parent="." instance=ExtResource( 1 )]
-margin_left = -188.989
-margin_top = -251.984
-margin_right = 211.011
-margin_bottom = -51.9843
-custom_fonts/normal_font = SubResource( 2 )
-scroll_active = false
-fade_timing = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
 
 [connection signal="area_entered" from="." to="." method="_on_MessageTrigger_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_MessageTrigger_area_exited"]

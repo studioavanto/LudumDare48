@@ -16,6 +16,7 @@ func turn_on_light():
 
 func toggle_light():
 	light_on = !light_on
+	print("asd")
 	if light_on:
 		$LightHitBox.collision_mask = 1
 	else:

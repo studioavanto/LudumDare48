@@ -22,13 +22,16 @@ __meta__ = {
 }
 
 [node name="ChangeSceneRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 2195.0
+margin_bottom = 1199.0
 texture = ExtResource( 5 )
+expand = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+INTRO_TEXT_1 = "I've always had trouble sleeping in dark."
+DEATH_TEXT = "I've died"
 
 [node name="BackgroundTween" type="Tween" parent="ChangeSceneRect"]
 
@@ -49,9 +52,14 @@ __meta__ = {
 
 [node name="SceneText" type="RichTextLabel" parent="ChangeSceneRect"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 77.0
-margin_right = 1243.0
-margin_bottom = 1200.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -346.357
+margin_top = -176.003
+margin_right = 819.643
+margin_bottom = 1024.0
 custom_fonts/normal_font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

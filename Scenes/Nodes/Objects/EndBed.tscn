@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Control/EndArea.gd" type="Script" id=1]
 [ext_resource path="res://Grafiikka/Kartta/Huonekalut/sanky.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Nodes/MessageTrigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Nodes/Message.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 134.686
+height = 171.334
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 122.687, 182.598 )
@@ -15,8 +20,19 @@ texture = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="MessageTrigger" parent="." instance=ExtResource( 3 )]
-position = Vector2( -3.17484, 147.628 )
+position = Vector2( -57.1464, 122.23 )
 message = "Press Space to Interact"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger"]
+position = Vector2( 57.1464, -120.642 )
+shape = SubResource( 3 )
+
+[node name="Message" parent="MessageTrigger" instance=ExtResource( 4 )]
+margin_left = -52.3923
+margin_top = -169.967
+margin_right = 234.608
+margin_bottom = 24.0327
+text = "Press Space to Interact"
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2( -10.0796, 1.25995 )

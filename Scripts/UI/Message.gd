@@ -1,10 +1,6 @@
 extends RichTextLabel
 export var fade_timing = 2.0
 
-func _ready():
-	if(get_parent() != null):
-		text = get_parent().message
-	
 func fade_to_view():
 	$Tween.interpolate_property(
 		self,
