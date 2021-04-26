@@ -36,11 +36,13 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-INTRO_TEXT_1 = "I've always had trouble sleeping in dark."
+INTRO_TEXT_1 = "I've always had trouble sleeping in the dark."
+INTRO_TEXT_2 = "I saw him again in my dream"
 GAME_TEXT_1 = "\"Son, why don't you ever visit?\""
 GAME_TEXT_2 = "\"My son has been to lenient on you boy\""
 GAME_TEXT_3 = "\"Fetch me more wine boy\""
 GAME_TEXT_4 = "\"You won't be getting out before you stop whining\""
+OUTRO_TEXT_1 = "I guess it wasn't the darkness. He cannot hurt me anymore."
 DEATH_TEXT = "I've died"
 
 [node name="BackgroundTween" type="Tween" parent="ChangeSceneRect"]

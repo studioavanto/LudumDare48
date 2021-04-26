@@ -46,7 +46,7 @@ z_index = -1
 texture = ExtResource( 2 )
 
 [node name="StartLocation" type="Node2D" parent="."]
-position = Vector2( 1195.31, 461.516 )
+position = Vector2( 1307.56, 596.211 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
@@ -64,10 +64,10 @@ script = ExtResource( 16 )
 position = Vector2( 876.333, 208.511 )
 
 [node name="Message" parent="Lamps/Lamp2" instance=ExtResource( 13 )]
-margin_left = -201.276
-margin_top = -340.82
-margin_right = 198.724
-margin_bottom = -40.8198
+margin_left = 281.988
+margin_top = -57.6577
+margin_right = 681.988
+margin_bottom = 242.342
 rect_min_size = Vector2( 400, 300 )
 text = "I should go back to sleep"
 
@@ -98,7 +98,7 @@ position = Vector2( 1141.76, 607.47 )
 message = "I should turn the light on"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger2"]
-position = Vector2( 12.0289, -162.427 )
+position = Vector2( 165.535, 145.921 )
 shape = SubResource( 2 )
 
 [node name="Message" parent="MessageTrigger2" instance=ExtResource( 13 )]
