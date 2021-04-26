@@ -19,9 +19,7 @@ script = ExtResource( 2 )
 color = Color( 0.521569, 0.376471, 0.215686, 1 )
 
 [node name="GeneralSoundEffects" type="AudioStreamPlayer" parent="."]
-bus = "Effects"
 script = ExtResource( 5 )
 
 [node name="GeneralSoundEffectsSC" type="AudioStreamPlayer" parent="."]
-bus = "Effects"
 script = ExtResource( 5 )
