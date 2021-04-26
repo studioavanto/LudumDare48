@@ -18,6 +18,11 @@ config/name="Ludum Dare 48"
 run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+window/size/fullscreen=true
+
 [input]
 
 pause={

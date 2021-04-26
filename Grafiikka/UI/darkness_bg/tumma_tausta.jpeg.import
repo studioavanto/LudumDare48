@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tumma_tausta.jpeg-6a6d6061d02a723d2711344313cf33d3.stex"
+path="res://.import/tumma_tausta.jpeg-7924a663c682660801d6bc6c0b3e0155.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grafiikka/UI/tumma_tausta.jpeg"
-dest_files=[ "res://.import/tumma_tausta.jpeg-6a6d6061d02a723d2711344313cf33d3.stex" ]
+source_file="res://Grafiikka/UI/darkness_bg/tumma_tausta.jpeg"
+dest_files=[ "res://.import/tumma_tausta.jpeg-7924a663c682660801d6bc6c0b3e0155.stex" ]
 
 [params]
 

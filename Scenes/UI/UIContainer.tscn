@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/UI/ChangeSceneRect.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/UI/PauseScreen.gd" type="Script" id=3]
 [ext_resource path="res://Grafiikka/UI/pause.png" type="Texture" id=4]
-[ext_resource path="res://Grafiikka/UI/tumma_tausta.jpeg" type="Texture" id=5]
+[ext_resource path="res://Grafiikka/UI/darkness_bg/tumma_tausta.jpeg" type="Texture" id=5]
 [ext_resource path="res://Grafiikka/UI/Fontti/CourierPrime-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Grafiikka/UI/Press esc to quit.png" type="Texture" id=7]
 [ext_resource path="res://Grafiikka/UI/Press space to continue.png" type="Texture" id=8]

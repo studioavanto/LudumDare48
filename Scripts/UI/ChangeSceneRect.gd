@@ -19,7 +19,7 @@ var current_active = "None"
 
 var intro_scene = preload("res://Grafiikka/UI/titlescreen.png")
 var wakeup_scene = preload("res://Grafiikka/UI/game_over.png")
-var scene_background = preload("res://Grafiikka/UI/tumma_tausta.jpeg")
+var scene_background = preload("res://Grafiikka/UI/darkness_bg/tumma_tausta.jpeg")
 var end_screen = preload("res://Grafiikka/UI/Credits.png")
 
 func _ready():
