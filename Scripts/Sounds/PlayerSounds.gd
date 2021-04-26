@@ -17,4 +17,5 @@ func _ready():
 
 func play_step():
 	stream = steps[walk_cycle]
+	play()
 	walk_cycle = (walk_cycle + 1) % 6

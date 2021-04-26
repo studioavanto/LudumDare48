@@ -13,6 +13,7 @@ func interact_object():
 		$Message.fade_to_view()
 
 	if not lamp_on:
+		get_tree().root.get_node("Game/GeneralSoundEffects").play_sound("lamp_on")
 		$LightSource.toggle_light()
 		lamp_on = true
 		

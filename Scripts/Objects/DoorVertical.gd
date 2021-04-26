@@ -18,6 +18,7 @@ func interact_object():
 		open_door()
 
 func open_door():
+	get_tree().root.get_node("Game/GeneralSoundEffects").play_sound("door_open")
 	$DoorOikea.texture = door_open_sprite
 	$DoorOikea.position -= Vector2(-20, 80)
 	$DoorVasen.texture = null
@@ -26,6 +27,7 @@ func open_door():
 	door_open = true
 
 func close_door():
+	get_tree().root.get_node("Game/GeneralSoundEffects").play_sound("door_close")
 	$DoorOikea.texture = door_closed_right_sprite
 	$DoorOikea.position += Vector2(-20, 80)
 	$DoorVasen.texture = door_closed_left_sprite
