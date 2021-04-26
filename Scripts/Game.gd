@@ -1,6 +1,7 @@
 extends Node2D
 
 var game_stage = "INTRO"
+export var start_stage = 0
 var current_stage = 0
 var scene_transition = false
 export var test = false
@@ -16,6 +17,7 @@ var maps = [
 var test_map = "res://Scenes/Maps/IlmoTestMap.tscn"
 
 func _ready():
+	current_stage = start_stage
 	if test:
 		add_child(load(test_map).instance())
 		$UIContainer/ChangeSceneRect.modulate = Color(1.0, 1.0, 1.0, 0.0)

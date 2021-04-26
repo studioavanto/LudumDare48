@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/UI/Fuel.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/UI/ChangeSceneRect.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/UI/PauseScreen.gd" type="Script" id=3]
 [ext_resource path="res://Grafiikka/UI/pause.png" type="Texture" id=4]
 [ext_resource path="res://Grafiikka/UI/tumma_tausta.jpeg" type="Texture" id=5]
+[ext_resource path="res://Grafiikka/UI/Fontti/CourierPrime-Regular.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 6 )
 
 [node name="UIContainer" type="CanvasLayer"]
 
@@ -30,14 +35,6 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="ChangeSceneRect"]
 one_shot = true
 
-[node name="SceneText" type="RichTextLabel" parent="ChangeSceneRect"]
-modulate = Color( 1, 1, 1, 0 )
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ScreenTexture" type="TextureRect" parent="ChangeSceneRect"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
@@ -50,10 +47,21 @@ __meta__ = {
 
 [node name="FadeInTween" type="Tween" parent="ChangeSceneRect"]
 
+[node name="SceneText" type="RichTextLabel" parent="ChangeSceneRect"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 77.0
+margin_right = 1243.0
+margin_bottom = 1200.0
+custom_fonts/normal_font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PauseScreen" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = -3.1748
+margin_right = 1920.0
+margin_bottom = 1076.83
 texture = ExtResource( 4 )
 script = ExtResource( 3 )
 __meta__ = {
