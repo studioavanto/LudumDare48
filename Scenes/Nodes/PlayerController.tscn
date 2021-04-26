@@ -85,16 +85,13 @@ position = Vector2( 38.468, -35 )
 occluder = SubResource( 4 )
 
 [node name="Light2D" type="Light2D" parent="MoveController/PlayerBody"]
-light_mask = 2
 texture = ExtResource( 16 )
 texture_scale = 10.0
-color = Color( 0.552941, 0.494118, 0.329412, 1 )
 energy = 0.5
 mode = 3
 shadow_gradient_length = 1.1
 shadow_filter = 3
 shadow_filter_smooth = 30.0
-shadow_item_cull_mask = 2
 
 [node name="PauseController" type="Node2D" parent="."]
 script = ExtResource( 3 )
