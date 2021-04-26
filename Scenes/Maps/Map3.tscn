@@ -1,21 +1,48 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/Nodes/Lamp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Nodes/Pickuppable-object.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Grafiikka/Kartta/kartta3.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Nodes/Monster.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Nodes/Collisions.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Nodes/Objects/salonkipoyta_pullot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Nodes/Objects/pullot_2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Nodes/Objects/pullot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Ai/Monsters.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/Objects/Lamps.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Nodes/Objects/perunasakki.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scripts/Terrain.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/Nodes/Objects/EndBed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Nodes/Objects/kaappi1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Nodes/Objects/poyta.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Nodes/Objects/laatikko2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Nodes/Objects/arkku.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Nodes/Objects/laatikosto.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Nodes/Objects/kaappi.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Nodes/Objects/kaappi2.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Grafiikka/Kartta/Huonekalut/Tynnyri.png" type="Texture" id=21]
+[ext_resource path="res://Grafiikka/Kartta/Huonekalut/Tynnyri2.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Nodes/Message.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Nodes/MessageTrigger.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Grafiikka/Kartta/Ovet/Kellari/ovipaikka_K_keskivas.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/Nodes/Doors/DoorVertical.tscn" type="PackedScene" id=26]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 798.128, 728.696, -1657.82, 728.696, -1648.84, 688.406, -1020.26, 576.49, -890.055, 576.49, -2169.66, -68.1468, -2169.66, -323.315, -899.035, -318.839, -899.035, -63.6701, 2172.55, -1084.34, 2181.53, 451.144, 1400.29, 455.621, 1390.79, 213.882, -1653.33, 70.6292, -1033.73, 61.6758, -894.545, -941.092, 784.658, 209.405, -1015.77, -941.092, -1024.75, -448.661, -1662.31, -453.138, -1666.8, -1093.3 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12 ), PoolIntArray( 2, 13, 14, 3 ), PoolIntArray( 15, 16, 0, 4, 8, 7 ), PoolIntArray( 17, 18, 19, 20 ), PoolIntArray( 17, 20, 9, 15 ), PoolIntArray( 15, 9, 12, 16 ) ]
-outlines = [ PoolVector2Array( -1666.8, -1093.3, -1662.31, -453.138, -1024.75, -448.661, -1015.77, -941.092, -894.545, -941.092, -899.035, -318.839, -2169.66, -323.315, -2169.66, -68.1468, -899.035, -63.6701, -890.055, 576.49, -1020.26, 576.49, -1033.73, 61.6758, -1653.33, 70.6292, -1648.84, 688.406, -1657.82, 728.696, 798.128, 728.696, 784.658, 209.405, 1390.79, 213.882, 1400.29, 455.621, 2181.53, 451.144, 2172.55, -1084.34 ) ]
+vertices = PoolVector2Array( 1691.1, 14.1935, 2184.81, 434.62, 1398.69, 434.62, 1390.79, 213.882, 51.0484, 18.4189, 784.658, 209.405, 2172.55, -1084.34, 1686.86, -209.752, 988.212, -844.346, 984.212, -1083.64, 1373.26, -323.837, 791.146, 459.518, -424.696, 470.263, -899.035, -63.6701, -2169.66, -68.1468, -2169.66, -323.315, -899.035, -318.839, 53.1674, -241.442, -1527.79, -1091.62, -451.8, -1089.5, -451.788, -844.346, -894.545, -941.092, -1159.79, -712.734, -1163.79, -453.499, -1527.79, -457.487, -430.035, 709.828, -1420.68, 723.486, -1425.17, 584.71, -1375.78, 553.374, -1299.45, 535.467, -1020.26, 576.49, -890.055, 576.49, 792.673, -330.176, 782.078, -245.668, -1015.77, -941.092, -1019.79, -724.699, 1398.69, -218.203 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ), PoolIntArray( 6, 1, 0, 7 ), PoolIntArray( 8, 9, 6, 7, 10 ), PoolIntArray( 4, 5, 11, 12, 13 ), PoolIntArray( 13, 14, 15, 16, 17 ), PoolIntArray( 18, 19, 20, 21 ), PoolIntArray( 22, 23, 24, 18 ), PoolIntArray( 25, 26, 27, 28, 29, 30 ), PoolIntArray( 25, 30, 31 ), PoolIntArray( 12, 25, 31, 13 ), PoolIntArray( 17, 4, 13 ), PoolIntArray( 17, 16, 21, 20, 32, 33 ), PoolIntArray( 34, 35, 22, 18 ), PoolIntArray( 7, 36, 10 ), PoolIntArray( 8, 10, 32, 20 ), PoolIntArray( 18, 21, 34 ) ]
+outlines = [ PoolVector2Array( -1527.79, -1091.62, -1527.79, -457.487, -1163.79, -453.499, -1159.79, -712.734, -1019.79, -724.699, -1015.77, -941.092, -894.545, -941.092, -899.035, -318.839, -2169.66, -323.315, -2169.66, -68.1468, -899.035, -63.6701, -890.055, 576.49, -1020.26, 576.49, -1299.45, 535.467, -1375.78, 553.374, -1425.17, 584.71, -1420.68, 723.486, -430.035, 709.828, -424.696, 470.263, 791.146, 459.518, 784.658, 209.405, 1390.79, 213.882, 1398.69, 434.62, 2184.81, 434.62, 2172.55, -1084.34, 984.212, -1083.64, 988.212, -844.346, -451.788, -844.346, -451.8, -1089.5 ), PoolVector2Array( 792.673, -330.176, 1373.26, -323.837, 1398.69, -218.203, 1686.86, -209.752, 1691.1, 14.1935, 51.0484, 18.4189, 53.1674, -241.442, 782.078, -245.668 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 200, 200 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 360, 120 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 140, 100 )
 
 [node name="Terrain" type="Node2D"]
+position = Vector2( 3.77545, 20.7653 )
 script = ExtResource( 12 )
 
 [node name="kartta1" type="Sprite" parent="."]
@@ -35,19 +62,20 @@ navpoly = SubResource( 1 )
 script = ExtResource( 10 )
 
 [node name="Lamp3" parent="Lamps" instance=ExtResource( 1 )]
-position = Vector2( 1600, 320 )
+position = Vector2( 1605.34, 405.43 )
 
 [node name="Lamp" parent="Lamps" instance=ExtResource( 1 )]
-position = Vector2( -1600, 256 )
+position = Vector2( -1601.83, 395.818 )
 
 [node name="Lamp2" parent="Lamps" instance=ExtResource( 1 )]
-position = Vector2( -1600, -640 )
+position = Vector2( -1335.49, -505.588 )
 
 [node name="Lamp4" parent="Lamps" instance=ExtResource( 1 )]
-position = Vector2( 1984, 320 )
+position = Vector2( 2050.74, 392.081 )
 
 [node name="EndBed" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1920, -1024 )
+position = Vector2( 1870.05, -1097.73 )
+rotation = 1.56312
 
 [node name="Monsters" type="Node" parent="."]
 script = ExtResource( 9 )
@@ -62,14 +90,191 @@ position = Vector2( 192, -576 )
 position = Vector2( 1984, -384 )
 
 [node name="Pickuppable-object" parent="." instance=ExtResource( 2 )]
-position = Vector2( 896, 128 )
-
-[node name="Pickuppable-object2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1088, 128 )
+position = Vector2( 1079.95, 124.22 )
 
 [node name="Pickuppable-object3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1280, 128 )
 
 [node name="TileMap" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, 58 )
-tile_data = PoolIntArray( -589838, 0, 1, -589837, 0, 196610, -589836, 0, 196610, -589835, 0, 196610, -589834, 0, 196610, -589833, 0, 196610, -589832, 0, 196610, -589831, 0, 196610, -589830, 0, 196610, -589829, 0, 196610, -589828, 0, 196610, -589827, 0, 196610, -589826, 0, 196610, -589825, 0, 196610, -655360, 0, 196610, -655359, 0, 196610, -655358, 0, 196610, -655357, 0, 196610, -655356, 0, 196610, -655355, 0, 196610, -655354, 0, 196610, -655353, 0, 196610, -655352, 0, 196610, -655351, 0, 196610, -655350, 0, 196610, -655349, 0, 196610, -655348, 0, 196610, -655347, 0, 196610, -655346, 0, 196610, -655345, 0, 196610, -655344, 0, 196610, -655343, 0, 3, -524302, 0, 65536, -589807, 0, 65536, -458766, 0, 65536, -458760, 0, 0, -524271, 0, 65536, -393230, 0, 65536, -393224, 0, 65536, -458735, 0, 65536, -327694, 0, 65536, -327688, 0, 65536, -393199, 0, 65536, -262158, 0, 65536, -262152, 0, 65536, -327663, 0, 65536, -196626, 0, 1, -196625, 0, 196610, -196624, 0, 196610, -196623, 0, 196610, -196622, 0, 131074, -196621, 0, 196610, -196620, 0, 196610, -196619, 0, 196610, -196618, 0, 196610, -196617, 0, 196610, -196616, 0, 131075, -262127, 0, 65536, -131090, 0, 65536, -196591, 0, 65536, -65554, 0, 65536, -131055, 0, 65536, -18, 0, 131073, -17, 0, 196610, -16, 0, 196610, -15, 0, 196610, -14, 0, 2, -13, 0, 196610, -12, 0, 196610, -11, 0, 196610, -10, 0, 196610, -9, 0, 196610, -8, 0, 3, -65519, 0, 65536, 65522, 0, 65536, 65528, 0, 65536, 17, 0, 65536, 131058, 0, 65536, 131064, 0, 65536, 65542, 0, 1, 65543, 0, 196610, 65544, 0, 196610, 65545, 0, 196610, 65546, 0, 3, 65553, 0, 65536, 196594, 0, 65536, 196600, 0, 65536, 131078, 0, 65536, 131082, 0, 65536, 131089, 0, 65536, 262130, 0, 65536, 262136, 0, 131072, 196614, 0, 65536, 196618, 0, 131073, 196619, 0, 196610, 196620, 0, 196610, 196621, 0, 196610, 196622, 0, 196610, 196623, 0, 196610, 196624, 0, 196610, 196625, 0, 131075, 327666, 0, 65536, 262150, 0, 65536, 393202, 0, 131073, 393203, 0, 196610, 393204, 0, 196610, 393205, 0, 196610, 393206, 0, 196610, 393207, 0, 196610, 393208, 0, 196610, 393209, 0, 196610, 393210, 0, 196610, 393211, 0, 196610, 393212, 0, 196610, 393213, 0, 196610, 393214, 0, 196610, 393215, 0, 196610, 327680, 0, 196610, 327681, 0, 196610, 327682, 0, 196610, 327683, 0, 196610, 327684, 0, 196610, 327685, 0, 196610, 327686, 0, 131075 )
+tile_data = PoolIntArray( -589838, 0, 1, -589837, 0, 196610, -589836, 0, 196610, -589835, 0, 196610, -589834, 0, 196610, -589833, 0, 196610, -589832, 0, 196610, -589831, 0, 196610, -589830, 0, 196610, -589829, 0, 196610, -589828, 0, 196610, -589827, 0, 196610, -589826, 0, 196610, -589825, 0, 196610, -655360, 0, 196610, -655359, 0, 196610, -655358, 0, 196610, -655357, 0, 196610, -655356, 0, 196610, -655355, 0, 196610, -655354, 0, 196610, -655353, 0, 196610, -655352, 0, 196610, -655351, 0, 196610, -655350, 0, 196610, -655349, 0, 196610, -655348, 0, 196610, -655347, 0, 196610, -655346, 0, 196610, -655345, 0, 196610, -655344, 0, 196610, -655343, 0, 3, -524302, 0, 65536, -589807, 0, 65536, -458766, 0, 65536, -458760, 0, 0, -524271, 0, 65536, -393230, 0, 65536, -393224, 0, 65536, -458735, 0, 65536, -327694, 0, 65536, -327688, 0, 65536, -393199, 0, 65536, -262158, 0, 65536, -262152, 0, 65536, -327663, 0, 65536, -196626, 0, 1, -196625, 0, 196610, -196624, 0, 196610, -196623, 0, 196610, -196622, 0, 131074, -196621, 0, 196610, -196620, 0, 196610, -196619, 0, 196610, -196618, 0, 196610, -196617, 0, 196610, -196616, 0, 131075, -262127, 0, 65536, -131090, 0, 65536, -196602, 0, 1, -196601, 0, 196610, -196600, 0, 196610, -196599, 0, 196610, -196598, 0, 3, -196591, 0, 65536, -65554, 0, 65536, -131066, 0, 65536, -131062, 0, 65536, -131055, 0, 65536, -18, 0, 131073, -17, 0, 196610, -16, 0, 196610, -15, 0, 196610, -14, 0, 2, -13, 0, 196610, -12, 0, 196610, -11, 0, 196610, -10, 0, 196610, -9, 0, 196610, -8, 0, 3, -65530, 0, 131073, -65529, 0, 196610, -65528, 0, 196610, -65527, 0, 196610, -65526, 0, 131075, -65519, 0, 65536, 65522, 0, 65536, 65528, 0, 65536, 17, 0, 65536, 131058, 0, 65536, 131064, 0, 65536, 65542, 0, 1, 65543, 0, 196610, 65544, 0, 196610, 65545, 0, 196610, 65546, 0, 3, 65553, 0, 65536, 196594, 0, 65536, 196600, 0, 65536, 131078, 0, 65536, 131082, 0, 65536, 131089, 0, 65536, 262130, 0, 65536, 262136, 0, 131072, 196614, 0, 65536, 196618, 0, 131073, 196619, 0, 196610, 196620, 0, 196610, 196621, 0, 196610, 196622, 0, 196610, 196623, 0, 196610, 196624, 0, 196610, 196625, 0, 131075, 327666, 0, 65536, 262150, 0, 65536, 393202, 0, 131073, 393203, 0, 196610, 393204, 0, 196610, 393205, 0, 196610, 393206, 0, 196610, 393207, 0, 196610, 393208, 0, 196610, 393209, 0, 196610, 393210, 0, 196610, 393211, 0, 196610, 393212, 0, 196610, 393213, 0, 196610, 393214, 0, 196610, 393215, 0, 196610, 327680, 0, 196610, 327681, 0, 196610, 327682, 0, 196610, 327683, 0, 196610, 327684, 0, 196610, 327685, 0, 196610, 327686, 0, 131075 )
+
+[node name="Tynnyri" type="Sprite" parent="."]
+position = Vector2( 662.542, 603.131 )
+texture = ExtResource( 21 )
+
+[node name="Tynnyri2" type="Sprite" parent="."]
+position = Vector2( 415.601, 603.131 )
+texture = ExtResource( 22 )
+
+[node name="Tynnyri3" type="Sprite" parent="."]
+position = Vector2( 173.149, 603.131 )
+texture = ExtResource( 21 )
+
+[node name="Tynnyri4" type="Sprite" parent="."]
+position = Vector2( -73.7927, 603.131 )
+texture = ExtResource( 22 )
+
+[node name="Tynnyri5" type="Sprite" parent="."]
+position = Vector2( -311.755, 603.131 )
+texture = ExtResource( 21 )
+
+[node name="Tynnyri6" type="Sprite" parent="."]
+position = Vector2( 649.073, -92.7957 )
+texture = ExtResource( 22 )
+
+[node name="Tynnyri7" type="Sprite" parent="."]
+position = Vector2( 411.111, -92.7957 )
+texture = ExtResource( 22 )
+
+[node name="Tynnyri8" type="Sprite" parent="."]
+position = Vector2( 177.639, -88.3058 )
+texture = ExtResource( 21 )
+
+[node name="Tynnyri9" type="Sprite" parent="."]
+position = Vector2( 1529.08, -92.7957 )
+rotation = 1.55079
+texture = ExtResource( 22 )
+
+[node name="Tynnyri10" type="Sprite" parent="."]
+position = Vector2( 867.949, -989.578 )
+rotation = 3.1398
+texture = ExtResource( 21 )
+
+[node name="Tynnyri11" type="Sprite" parent="."]
+position = Vector2( 627.735, -992.942 )
+rotation = -3.13776
+texture = ExtResource( 22 )
+
+[node name="Tynnyri12" type="Sprite" parent="."]
+position = Vector2( 386.409, -996.305 )
+rotation = 3.12435
+texture = ExtResource( 21 )
+
+[node name="Tynnyri13" type="Sprite" parent="."]
+position = Vector2( 152.937, -995.179 )
+rotation = 3.13591
+texture = ExtResource( 22 )
+
+[node name="Tynnyri14" type="Sprite" parent="."]
+position = Vector2( -87.2774, -986.215 )
+rotation = -3.13929
+texture = ExtResource( 21 )
+
+[node name="Tynnyri15" type="Sprite" parent="."]
+position = Vector2( -327.477, -982.851 )
+rotation = 3.14132
+texture = ExtResource( 21 )
+
+[node name="ObjectWithoutCollision" parent="." instance=ExtResource( 8 )]
+position = Vector2( -567.676, -999.745 )
+
+[node name="ObjectWithoutCollision2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -1106.74, -773.221 )
+rotation = 1.83503
+
+[node name="ObjectWithoutCollision3" parent="." instance=ExtResource( 7 )]
+position = Vector2( -118.691, -124.225 )
+
+[node name="ObjectWithoutCollision4" parent="." instance=ExtResource( 8 )]
+position = Vector2( -145.63, -38.9175 )
+
+[node name="ObjectWithCollision4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1324.32, -1010.95 )
+
+[node name="ObjectWithCollision" parent="." instance=ExtResource( 16 )]
+position = Vector2( -1092.19, 493.241 )
+
+[node name="ObjectWithCollision2" parent="." instance=ExtResource( 16 )]
+position = Vector2( -1100.19, 357.241 )
+rotation = -1.56221
+
+[node name="ObjectWithCollision3" parent="." instance=ExtResource( 16 )]
+position = Vector2( -1596.67, 399.869 )
+
+[node name="ObjectWithCollision5" parent="." instance=ExtResource( 15 )]
+position = Vector2( -1340.19, 125.241 )
+
+[node name="ObjectWithCollision6" parent="." instance=ExtResource( 17 )]
+position = Vector2( -1084.19, 109.241 )
+
+[node name="ObjectWithCollision8" parent="." instance=ExtResource( 18 )]
+position = Vector2( -1220.19, 117.241 )
+
+[node name="ObjectWithCollision7" parent="." instance=ExtResource( 11 )]
+position = Vector2( -1232.11, 359.868 )
+
+[node name="ObjectWithCollision9" parent="." instance=ExtResource( 14 )]
+position = Vector2( -1598.81, 181.11 )
+
+[node name="ObjectWithCollision10" parent="." instance=ExtResource( 19 )]
+position = Vector2( -1535.23, 638.352 )
+
+[node name="ObjectWithCollision11" parent="." instance=ExtResource( 6 )]
+position = Vector2( -1596.36, -890.131 )
+rotation = -1.57232
+
+[node name="ObjectWithCollision12" parent="." instance=ExtResource( 20 )]
+position = Vector2( -1590.48, -584.568 )
+rotation = -3.12319
+
+[node name="ObjectWithCollision13" parent="." instance=ExtResource( 20 )]
+position = Vector2( -1089.3, -591.296 )
+
+[node name="MessageTrigger" parent="." instance=ExtResource( 24 )]
+position = Vector2( -1813.47, -207.083 )
+
+[node name="Message" parent="MessageTrigger" instance=ExtResource( 23 )]
+margin_left = -309.799
+margin_top = -502.863
+margin_right = 90.2006
+margin_bottom = -202.863
+text = "Press E to briefly burn brighter."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger"]
+shape = SubResource( 2 )
+
+[node name="barrelcollision1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrelcollision1"]
+position = Vector2( 417.556, -112.246 )
+shape = SubResource( 3 )
+
+[node name="barrelcollision2" type="StaticBody2D" parent="."]
+position = Vector2( -507.353, -857.561 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrelcollision2"]
+position = Vector2( 417.556, -112.246 )
+shape = SubResource( 3 )
+
+[node name="barrelcollision3" type="StaticBody2D" parent="."]
+position = Vector2( 211.023, -857.561 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrelcollision3"]
+position = Vector2( 417.556, -112.246 )
+shape = SubResource( 3 )
+
+[node name="barrelcollision4" type="StaticBody2D" parent="."]
+position = Vector2( -480.414, 700.416 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrelcollision4"]
+position = Vector2( 417.556, -112.246 )
+shape = SubResource( 3 )
+
+[node name="barrelcollision5" type="StaticBody2D" parent="."]
+position = Vector2( 4.48975, 700.416 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="barrelcollision5"]
+position = Vector2( 417.556, -112.246 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 4.48975, 700.416 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1523.84, -795.565 )
+shape = SubResource( 4 )
+
+[node name="DoorObjectHorizontal" parent="." instance=ExtResource( 26 )]
+position = Vector2( 843.58, 137.217 )
+texture = ExtResource( 25 )
