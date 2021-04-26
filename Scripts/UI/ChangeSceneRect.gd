@@ -30,6 +30,7 @@ func fade_to_scene(next_scene):
 		texture = switch_scene
 
 	var screen_text = "Temp text stuff"
+	
 	$SceneText.text = screen_text
 	
 	$Tween.interpolate_property(

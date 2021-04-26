@@ -44,11 +44,8 @@ func intense_burn_animation():
 
 func _ready():
 	$Tween.connect("tween_all_completed", self, "intense_burn_animation")
-<<<<<<< HEAD
-=======
 	randomize()
 	value = randi()%MAX_VALUE
->>>>>>> e50468298f5068636cbdc6c6f3772e4baa3e8731
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
