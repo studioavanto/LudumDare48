@@ -5,7 +5,7 @@ extends KinematicBody2D
 var state = "Waiting"
 # var b = "text"
 export var speed = 300
-export var attack_dist = 70
+export var attack_dist = 100
 var look_dir = Vector2(1.0, 0.0)
 var dist_to_light = 1.0
 export var see_dist = 500
@@ -30,12 +30,12 @@ func go_hunting():
 
 func in_line_of_sight():
 	var in_los = 0
-	if(position.distance_to(target.position) < see_dist):
+	if(global_position.distance_to(target.global_position) < see_dist):
 		in_los = 1
 	return(in_los)
 func in_attack_distance():
 	var in_range = 0
-	if(position.distance_to(target.position) < attack_dist):
+	if(global_position.distance_to(target.global_position) < attack_dist):
 		in_range = 1
 	return(in_range)
 
