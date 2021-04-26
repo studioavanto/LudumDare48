@@ -5,17 +5,18 @@
 [ext_resource path="res://Scenes/Nodes/MessageTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Nodes/Message.tscn" type="PackedScene" id=4]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 134.686
 height = 171.334
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 122.687, 182.598 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 121.434, 171.837 )
 
 [node name="EndBed" type="Sprite"]
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 
@@ -25,7 +26,7 @@ message = "Press Space to Interact"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger"]
 position = Vector2( 57.1464, -120.642 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Message" parent="MessageTrigger" instance=ExtResource( 4 )]
 margin_left = -52.3923
@@ -40,9 +41,9 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( 10.4143, -1.61093 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )

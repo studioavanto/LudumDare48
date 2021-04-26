@@ -67,7 +67,7 @@ position = Vector2( -640, 64 )
 texture = ExtResource( 11 )
 
 [node name="EndBed" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1419.21, 457.436 )
+position = Vector2( 1453.11, 499.814 )
 rotation = -0.00796305
 
 [node name="Lamps" type="Node2D" parent="."]
