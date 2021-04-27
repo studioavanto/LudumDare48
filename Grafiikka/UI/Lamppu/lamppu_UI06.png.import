@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lamppu6.png-19c5e6a319a441615f6046f5c3044c05.stex"
+path="res://.import/lamppu_UI06.png-6d7e7871e5691248b1c0e2b627351736.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grafiikka/UI/Lamppu/lamppu6.png"
-dest_files=[ "res://.import/lamppu6.png-19c5e6a319a441615f6046f5c3044c05.stex" ]
+source_file="res://Grafiikka/UI/Lamppu/lamppu_UI06.png"
+dest_files=[ "res://.import/lamppu_UI06.png-6d7e7871e5691248b1c0e2b627351736.stex" ]
 
 [params]
 

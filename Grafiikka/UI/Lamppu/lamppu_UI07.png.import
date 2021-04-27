@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/monsteri.png-08fedd31d33b3cdfbcf1c38b9171ff92.stex"
+path="res://.import/lamppu_UI07.png-b0b85ca706ae7d043d5f81a1017d22b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Grafiikka/Hahmo/monsteri.png"
-dest_files=[ "res://.import/monsteri.png-08fedd31d33b3cdfbcf1c38b9171ff92.stex" ]
+source_file="res://Grafiikka/UI/Lamppu/lamppu_UI07.png"
+dest_files=[ "res://.import/lamppu_UI07.png-b0b85ca706ae7d043d5f81a1017d22b0.stex" ]
 
 [params]
 

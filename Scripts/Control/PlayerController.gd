@@ -12,7 +12,7 @@ func die():
 		get_parent().death_is_now()
 
 func set_fuel_ui():
-	get_parent().get_node("UIContainer/Fuel").set_texture($MoveController/PlayerBody/Inventory_node.lamp_oil+0.17)
+	get_parent().get_node("UIContainer/Fuel").set_texture($MoveController/PlayerBody/Inventory_node.lamp_oil+0.08)
 
 func get_pause_state():
 	return current_gamestate != GameState.CONTROL_PLAYER

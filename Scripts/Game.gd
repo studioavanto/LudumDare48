@@ -51,7 +51,10 @@ func destroy_current_map():
 		get_node("Terrain").queue_free()
 
 func load_next_map():
-	add_child(load(maps[(1+current_stage) / 2]).instance())
+	var terrain = load(maps[(1+current_stage) / 2]).instance()
+	terrain.name = "Terrain"
+	add_child(terrain)
+	
 	for child in get_children():
 		print(child.name)
 	set_player_to_start_location()

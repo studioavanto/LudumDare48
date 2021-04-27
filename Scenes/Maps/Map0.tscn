@@ -108,6 +108,36 @@ margin_right = 199.685
 margin_bottom = -58.512
 text = "Why is the light off?!"
 
+[node name="MessageTrigger4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1332.25, 343.961 )
+message = "I should turn the light on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger4"]
+position = Vector2( 165.535, 145.921 )
+shape = SubResource( 2 )
+
+[node name="Message" parent="MessageTrigger4" instance=ExtResource( 13 )]
+margin_left = 255.14
+margin_top = -63.5874
+margin_right = 596.14
+margin_bottom = 339.413
+text = "Go to sleep with Space"
+
+[node name="MessageTrigger3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 927.461, 428.094 )
+message = "I should turn the light on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageTrigger3"]
+position = Vector2( 36.9555, -166.797 )
+shape = SubResource( 2 )
+
+[node name="Message" parent="MessageTrigger3" instance=ExtResource( 13 )]
+margin_left = -174.622
+margin_top = -546.181
+margin_right = 112.378
+margin_bottom = -352.181
+text = "Turn Lights on with Space"
+
 [node name="ovipalikka_vihreä" type="Sprite" parent="."]
 position = Vector2( 718.594, 88.8132 )
 texture = ExtResource( 8 )

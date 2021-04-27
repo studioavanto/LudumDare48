@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Control/MoveController.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Control/PlayerController.gd" type="Script" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Grafiikka/varjo.png" type="Texture" id=17]
 [ext_resource path="res://Scripts/Sounds/PlayerSounds.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/Sounds/WalkSound.gd" type="Script" id=19]
+[ext_resource path="res://Grafiikka/Hahmo/MC_Idle03.png" type="Texture" id=20]
+[ext_resource path="res://Grafiikka/Hahmo/MC_Idle01.png" type="Texture" id=21]
+[ext_resource path="res://Grafiikka/Hahmo/MC_Idle02.png" type="Texture" id=22]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.0
@@ -28,7 +31,7 @@ radius = 50.0
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -76,6 +79,7 @@ shape = SubResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="MoveController/PlayerBody"]
 z_index = 4
 frames = SubResource( 3 )
+frame = 3
 playing = true
 script = ExtResource( 19 )
 
